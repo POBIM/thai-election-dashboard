@@ -3,10 +3,10 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { ElectionData, RegionFilter } from './types';
 import { StatsCard } from './components/StatsCard';
-import { VotersByRegionPie, TopDistrictsBar } from './components/Charts';
+import { VotersByRegionPie, TopDistrictsBar, TurnoutByRegionChart, DistrictTurnoutDistribution } from './components/Charts';
 import { DistrictTable } from './components/DistrictTable';
 import { ThailandMap } from './components/ThailandMap';
-import { Users, MapPin, BarChart3, Globe, Settings } from 'lucide-react';
+import { Users, MapPin, BarChart3, Globe, Settings, Vote, TrendingUp, AlertCircle } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Home() {
@@ -30,8 +30,17 @@ export default function Home() {
     fetchData();
   }, [fetchData]);
 
-  const { filteredDistricts, regionStats, totalVotersFiltered } = useMemo(() => {
-    if (!data) return { allDistricts: [], filteredDistricts: [], regionStats: [], totalVotersFiltered: 0 };
+  const { filteredDistricts, regionStats, totalVotersFiltered, totalActualVotersFiltered, turnoutPercentage, totalInvalidVotes, totalNoVotes } = useMemo(() => {
+    if (!data) return {
+      allDistricts: [],
+      filteredDistricts: [],
+      regionStats: [],
+      totalVotersFiltered: 0,
+      totalActualVotersFiltered: 0,
+      turnoutPercentage: 0,
+      totalInvalidVotes: 0,
+      totalNoVotes: 0
+    };
 
     const all = data.regions.flatMap(r => r.districts);
 
@@ -43,12 +52,20 @@ export default function Home() {
     }
 
     const total = filtered.reduce((acc, curr) => acc + curr.voterCount, 0);
+    const totalActual = filtered.reduce((acc, curr) => acc + (curr.actualVoters || 0), 0);
+    const turnout = total > 0 ? (totalActual / total) * 100 : 0;
+    const invalidVotes = filtered.reduce((acc, curr) => acc + (curr.invalidVotes || 0), 0);
+    const noVotes = filtered.reduce((acc, curr) => acc + (curr.noVotes || 0), 0);
 
     return {
       allDistricts: all,
       filteredDistricts: filtered,
       regionStats: data.regions,
-      totalVotersFiltered: total
+      totalVotersFiltered: total,
+      totalActualVotersFiltered: totalActual,
+      turnoutPercentage: turnout,
+      totalInvalidVotes: invalidVotes,
+      totalNoVotes: noVotes
     };
   }, [data, selectedRegion]);
 
@@ -114,25 +131,46 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
           <StatsCard
-            title={selectedRegion === RegionFilter.ALL ? "ผู้มีสิทธิเลือกตั้งทั้งหมด" : `ผู้มีสิทธิฯ (${selectedRegion})`}
+            title={selectedRegion === RegionFilter.ALL ? "ผู้มีสิทธิเลือกตั้ง" : `ผู้มีสิทธิฯ`}
             value={totalVotersFiltered.toLocaleString()}
             icon={Users}
-            trend={`อัปเดตล่าสุด: ${new Date(data.lastUpdated).toLocaleDateString('th-TH')}`}
+            trend={selectedRegion !== RegionFilter.ALL ? selectedRegion : undefined}
             colorClass="bg-blue-500"
           />
           <StatsCard
-            title="จำนวนเขตที่แสดงผล"
+            title="มาใช้สิทธิ"
+            value={totalActualVotersFiltered.toLocaleString()}
+            icon={Vote}
+            colorClass="bg-green-500"
+          />
+          <StatsCard
+            title="ร้อยละมาใช้สิทธิ"
+            value={`${turnoutPercentage.toFixed(2)}%`}
+            icon={TrendingUp}
+            trend={turnoutPercentage >= 75 ? 'สูงกว่าเป้าหมาย' : 'ต่ำกว่าเป้าหมาย'}
+            colorClass={turnoutPercentage >= 75 ? "bg-emerald-500" : "bg-yellow-500"}
+          />
+          <StatsCard
+            title="จำนวนเขต"
             value={filteredDistricts.length}
             icon={MapPin}
             colorClass="bg-indigo-500"
           />
           <StatsCard
-            title="เฉลี่ยผู้มีสิทธิ/เขต"
-            value={filteredDistricts.length ? Math.round(totalVotersFiltered / filteredDistricts.length).toLocaleString() : 0}
+            title="บัตรเสีย"
+            value={totalInvalidVotes.toLocaleString()}
+            icon={AlertCircle}
+            trend={totalActualVotersFiltered > 0 ? `${((totalInvalidVotes / totalActualVotersFiltered) * 100).toFixed(2)}%` : undefined}
+            colorClass="bg-red-500"
+          />
+          <StatsCard
+            title="ไม่ลงคะแนน"
+            value={totalNoVotes.toLocaleString()}
             icon={BarChart3}
-            colorClass="bg-emerald-500"
+            trend={totalActualVotersFiltered > 0 ? `${((totalNoVotes / totalActualVotersFiltered) * 100).toFixed(2)}%` : undefined}
+            colorClass="bg-orange-500"
           />
         </div>
 
@@ -150,16 +188,23 @@ export default function Home() {
                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 h-96 flex items-center justify-center text-gray-400">
                   <div className="text-center">
                     <Globe className="w-12 h-12 mx-auto mb-2 opacity-50" />
-                    <p>เลือก "ทั้งหมด" เพื่อดูสัดส่วนรวม</p>
+                    <p>เลือก &quot;ทั้งหมด&quot; เพื่อดูสัดส่วนรวม</p>
                   </div>
                </div>
             )}
           </div>
         </div>
 
-         <div className="grid grid-cols-1 gap-6">
-            <TopDistrictsBar data={filteredDistricts} />
-         </div>
+        {selectedRegion === RegionFilter.ALL && (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <TurnoutByRegionChart data={regionStats} />
+            <DistrictTurnoutDistribution data={filteredDistricts} />
+          </div>
+        )}
+
+        <div className="grid grid-cols-1 gap-6">
+          <TopDistrictsBar data={filteredDistricts} />
+        </div>
 
         <div className="w-full">
            <DistrictTable districts={filteredDistricts} />

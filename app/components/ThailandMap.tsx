@@ -13,7 +13,8 @@ interface ThailandMapProps {
 }
 
 interface ProvinceStats {
-  name: string;
+  name: string;           // Thai name
+  nameEn: string;         // English name
   region: string;
   totalEligible: number;
   totalActual: number;
@@ -52,6 +53,48 @@ const PROVINCE_REGION_MAP: Record<string, string> = {
   "Satun": RegionFilter.SOUTH, "Surat Thani": RegionFilter.SOUTH
 };
 
+// Mapping from English province names (TopoJSON) to Thai names (election data)
+const PROVINCE_EN_TO_TH: Record<string, string> = {
+  // Bangkok
+  "Bangkok": "กรุงเทพมหานคร", "Bangkok Metropolis": "กรุงเทพมหานคร",
+  // North
+  "Chiang Rai": "เชียงราย", "Chiang Mai": "เชียงใหม่", "Nan": "น่าน", "Phayao": "พะเยา",
+  "Phrae": "แพร่", "Mae Hong Son": "แม่ฮ่องสอน", "Lampang": "ลำปาง", "Lamphun": "ลำพูน",
+  "Uttaradit": "อุตรดิตถ์", "Tak": "ตาก", "Sukhothai": "สุโขทัย", "Phitsanulok": "พิษณุโลก",
+  "Phichit": "พิจิตร", "Phetchabun": "เพชรบูรณ์", "Kamphaeng Phet": "กำแพงเพชร",
+  "Nakhon Sawan": "นครสวรรค์", "Uthai Thani": "อุทัยธานี",
+  // Northeast (Isan)
+  "Kalasin": "กาฬสินธุ์", "Khon Kaen": "ขอนแก่น", "Chaiyaphum": "ชัยภูมิ",
+  "Nakhon Phanom": "นครพนม", "Nakhon Ratchasima": "นครราชสีมา", "Bueng Kan": "บึงกาฬ",
+  "Buri Ram": "บุรีรัมย์", "Maha Sarakham": "มหาสารคาม", "Mukdahan": "มุกดาหาร",
+  "Yasothon": "ยโสธร", "Roi Et": "ร้อยเอ็ด", "Loei": "เลย", "Sakon Nakhon": "สกลนคร",
+  "Surin": "สุรินทร์", "Si Sa Ket": "ศรีสะเกษ", "Nong Khai": "หนองคาย",
+  "Nong Bua Lam Phu": "หนองบัวลำภู", "Udon Thani": "อุดรธานี",
+  "Ubon Ratchathani": "อุบลราชธานี", "Amnat Charoen": "อำนาจเจริญ",
+  // Central
+  "Chai Nat": "ชัยนาท", "Nakhon Nayok": "นครนายก", "Nakhon Pathom": "นครปฐม",
+  "Nonthaburi": "นนทบุรี", "Pathum Thani": "ปทุมธานี",
+  "Phra Nakhon Si Ayutthaya": "พระนครศรีอยุธยา", "Lop Buri": "ลพบุรี",
+  "Samut Prakan": "สมุทรปราการ", "Samut Songkhram": "สมุทรสงคราม",
+  "Samut Sakhon": "สมุทรสาคร", "Sing Buri": "สิงห์บุรี", "Suphan Buri": "สุพรรณบุรี",
+  "Saraburi": "สระบุรี", "Ang Thong": "อ่างทอง", "Chanthaburi": "จันทบุรี",
+  "Chachoengsao": "ฉะเชิงเทรา", "Chon Buri": "ชลบุรี", "Trat": "ตราด",
+  "Prachin Buri": "ปราจีนบุรี", "Rayong": "ระยอง", "Sa Kaeo": "สระแก้ว",
+  "Kanchanaburi": "กาญจนบุรี", "Prachuap Khiri Khan": "ประจวบคีรีขันธ์",
+  "Phetchaburi": "เพชรบุรี", "Ratchaburi": "ราชบุรี",
+  // South
+  "Krabi": "กระบี่", "Chumphon": "ชุมพร", "Trang": "ตรัง",
+  "Nakhon Si Thammarat": "นครศรีธรรมราช", "Narathiwat": "นราธิวาส",
+  "Pattani": "ปัตตานี", "Phangnga": "พังงา", "Phatthalung": "พัทลุง",
+  "Phuket": "ภูเก็ต", "Yala": "ยะลา", "Ranong": "ระนอง", "Songkhla": "สงขลา",
+  "Satun": "สตูล", "Surat Thani": "สุราษฎร์ธานี"
+};
+
+// Reverse mapping: Thai to English
+const PROVINCE_TH_TO_EN: Record<string, string> = Object.fromEntries(
+  Object.entries(PROVINCE_EN_TO_TH).map(([en, th]) => [th, en])
+);
+
 const REGION_COLORS: Record<string, string> = {
   [RegionFilter.NORTH]: "#34D399",
   [RegionFilter.NORTHEAST]: "#FBBF24",
@@ -89,13 +132,14 @@ export const ThailandMap: React.FC<ThailandMapProps> = ({ regionStats, selectedR
 
   const provinceData = useMemo(() => {
     const data: Record<string, ProvinceStats> = {};
-    
+
     regionStats.forEach(region => {
       region.districts.forEach((district: DistrictData) => {
-        const provinceName = district.province;
+        const provinceName = district.province;  // Thai name
         if (!data[provinceName]) {
           data[provinceName] = {
             name: provinceName,
+            nameEn: PROVINCE_TH_TO_EN[provinceName] || provinceName,
             region: region.regionName,
             totalEligible: 0,
             totalActual: 0,
@@ -110,8 +154,8 @@ export const ThailandMap: React.FC<ThailandMapProps> = ({ regionStats, selectedR
     });
 
     Object.values(data).forEach(province => {
-      province.turnoutPercentage = province.totalActual > 0 
-        ? (province.totalActual / province.totalEligible) * 100 
+      province.turnoutPercentage = province.totalActual > 0
+        ? (province.totalActual / province.totalEligible) * 100
         : 0;
     });
 
@@ -177,10 +221,11 @@ export const ThailandMap: React.FC<ThailandMapProps> = ({ regionStats, selectedR
             <Geographies geography={geoData}>
               {({ geographies }) =>
                 geographies.map((geo) => {
-                  const provinceName = geo.properties.name || geo.properties.NAME_1;
-                  const region = getRegionFromProvince(provinceName);
+                  const provinceNameEn = geo.properties.name || geo.properties.NAME_1;
+                  const provinceNameTh = PROVINCE_EN_TO_TH[provinceNameEn] || provinceNameEn;
+                  const region = getRegionFromProvince(provinceNameEn);
                   const isSelected = String(selectedRegion) === String(RegionFilter.ALL) || String(selectedRegion) === String(region);
-                  const provinceStats = provinceData[provinceName];
+                  const provinceStats = provinceData[provinceNameTh];
 
                   let fillColor: string;
                   if (showByTurnout && provinceStats) {
@@ -233,8 +278,9 @@ export const ThailandMap: React.FC<ThailandMapProps> = ({ regionStats, selectedR
         )}
 
         {tooltipContent && (
-          <div className="absolute bottom-4 left-4 bg-gray-800 text-white text-xs px-4 py-3 rounded-lg shadow-lg pointer-events-none opacity-95 z-10 min-w-[200px]">
-            <div className="font-semibold text-sm mb-2">{tooltipContent.name}</div>
+          <div className="absolute bottom-4 left-4 bg-gray-800 text-white text-xs px-4 py-3 rounded-lg shadow-lg pointer-events-none opacity-95 z-10 min-w-[220px]">
+            <div className="font-semibold text-sm">{tooltipContent.name}</div>
+            <div className="text-gray-400 text-xs mb-2">{tooltipContent.nameEn}</div>
             <div className="space-y-1">
               <div className="flex justify-between">
                 <span className="text-gray-300">ภาค:</span>
@@ -246,16 +292,16 @@ export const ThailandMap: React.FC<ThailandMapProps> = ({ regionStats, selectedR
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-300">ผู้มีสิทธิ:</span>
-                <span>{formatNumber(tooltipContent.totalEligible)}</span>
+                <span>{formatNumber(tooltipContent.totalEligible)} คน</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-300">มาใช้สิทธิ:</span>
-                <span>{formatNumber(tooltipContent.totalActual)}</span>
+                <span>{formatNumber(tooltipContent.totalActual)} คน</span>
               </div>
               <div className="flex justify-between border-t border-gray-600 pt-1 mt-1">
-                <span className="text-gray-300">ร้อยละ:</span>
+                <span className="text-gray-300">ร้อยละมาใช้สิทธิ:</span>
                 <span className={`font-semibold ${
-                  tooltipContent.turnoutPercentage >= 75 ? 'text-green-400' : 
+                  tooltipContent.turnoutPercentage >= 75 ? 'text-green-400' :
                   tooltipContent.turnoutPercentage >= 70 ? 'text-yellow-400' : 'text-red-400'
                 }`}>
                   {tooltipContent.turnoutPercentage.toFixed(2)}%
