@@ -296,8 +296,12 @@ export interface RegionStats {
 /**
  * Aggregate district data by province
  */
-export function aggregateByProvince(regionData: RegionData[]): Map<string, ProvinceStats> {
+export function aggregateByProvince(regionData: RegionData[] | null | undefined): Map<string, ProvinceStats> {
   const provinceMap = new Map<string, ProvinceStats>();
+
+  if (!regionData || !Array.isArray(regionData)) {
+    return provinceMap;
+  }
 
   regionData.forEach(region => {
     region.districts.forEach((district: DistrictData) => {
@@ -342,7 +346,11 @@ export function aggregateByProvince(regionData: RegionData[]): Map<string, Provi
 /**
  * Aggregate district data by region
  */
-export function aggregateByRegion(regionData: RegionData[]): RegionStats[] {
+export function aggregateByRegion(regionData: RegionData[] | null | undefined): RegionStats[] {
+  if (!regionData || !Array.isArray(regionData)) {
+    return [];
+  }
+
   return regionData.map(region => {
     const totalActual = region.districts.reduce((sum, d) => sum + (d.actualVoters || 0), 0);
     const invalidVotes = region.districts.reduce((sum, d) => sum + (d.invalidVotes || 0), 0);

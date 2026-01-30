@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useEffect, useState, useMemo } from 'react';
-import { ComposableMap, Geographies, Geography, Marker, Annotation } from 'react-simple-maps';
-import { RegionData, RegionFilter, PoliticalParty } from '../types';
+import React, { useState, useMemo, useEffect } from 'react';
+import { ComposableMap, Geographies, Geography, Marker } from 'react-simple-maps';
+import type { RegionData } from '../types';
+import { RegionFilter } from '../types';
 import {
   toThaiProvince,
   getRegion,
@@ -13,18 +14,17 @@ import {
   formatNumber,
   formatPercent,
   REGION_COLORS,
-  ProvinceStats
 } from '@/lib/provinceMapping';
+import type { ProvinceStats } from '@/lib/provinceMapping';
 import {
   getProvinceWinningParty,
   getProvincePartyData,
   getBangkokDistrictsByParty,
   getPartySeatSummary,
   PARTY_BY_ID,
-  getMajorParties
 } from '@/lib/partyData';
 
-const GEO_URL = "https://raw.githubusercontent.com/apisit/thailand.json/master/thailand.json";
+const GEO_URL = "https://raw.githubusercontent.com/markmarkoh/datamaps/master/src/js/data/tha.topo.json";
 
 // Province centroid coordinates for labels (approximate)
 const PROVINCE_CENTROIDS: Record<string, [number, number]> = {
@@ -57,28 +57,49 @@ interface ThailandMapProps {
 }
 
 export const ThailandMap: React.FC<ThailandMapProps> = ({ regionStats, selectedRegion, onSelectRegion }) => {
-  const [geoData, setGeoData] = useState<any>(null);
-  const [error, setError] = useState<boolean>(false);
+  const safeRegionStats = regionStats ?? [];
+  
+  const [geoData, setGeoData] = useState<object | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
   const [tooltipContent, setTooltipContent] = useState<ProvinceStats | null>(null);
   const [viewMode, setViewMode] = useState<ViewMode>('party');
 
   useEffect(() => {
-    fetch(GEO_URL)
-      .then(res => {
-        if (!res.ok) throw new Error("Network response was not ok");
-        return res.json();
-      })
-      .then(data => setGeoData(data))
-      .catch(err => {
-        console.error("Failed to load map data", err);
-        setError(true);
-      });
+    let isMounted = true;
+    
+    const loadGeoData = async () => {
+      try {
+        const response = await fetch(GEO_URL);
+        if (!response.ok) {
+          throw new Error('Failed to fetch map data');
+        }
+        const data = await response.json();
+        
+        if (isMounted && data && typeof data === 'object') {
+          setGeoData(data);
+          setIsLoading(false);
+        }
+      } catch (err) {
+        console.error('Failed to load map data:', err);
+        if (isMounted) {
+          setHasError(true);
+          setIsLoading(false);
+        }
+      }
+    };
+
+    loadGeoData();
+    
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   // Use centralized aggregation function
   const provinceData = useMemo(() => {
-    return aggregateByProvince(regionStats);
-  }, [regionStats]);
+    return aggregateByProvince(safeRegionStats);
+  }, [safeRegionStats]);
 
   // Get party seat summary for legend
   const partySummary = useMemo(() => getPartySeatSummary(), []);
@@ -142,13 +163,13 @@ export const ThailandMap: React.FC<ThailandMapProps> = ({ regionStats, selectedR
       <div className="flex-grow flex gap-4">
         {/* Main Map */}
         <div className="flex-grow h-full rounded-lg overflow-hidden relative bg-blue-50/10 flex items-center justify-center">
-          {error ? (
+          {hasError ? (
             <div className="text-red-400 text-sm flex flex-col items-center">
               <p>ไม่สามารถโหลดแผนที่ได้</p>
               <p className="text-xs mt-1 text-gray-400">(Map Data Unavailable)</p>
             </div>
-          ) : !geoData ? (
-            <div className="text-gray-400 animate-pulse">Loading Map...</div>
+          ) : isLoading || !geoData ? (
+            <div className="text-gray-400 animate-pulse">กำลังโหลดแผนที่...</div>
           ) : (
             <ComposableMap
               projection="geoMercator"
@@ -162,21 +183,20 @@ export const ThailandMap: React.FC<ThailandMapProps> = ({ regionStats, selectedR
             >
               <Geographies geography={geoData}>
                 {({ geographies }) =>
-                  geographies.map((geo) => {
-                    const provinceNameEn = geo.properties.name || geo.properties.NAME_1;
-                    const provinceNameTh = toThaiProvince(provinceNameEn);
-                    const region = getRegion(provinceNameEn);
-                    const isSelected = selectedRegion === RegionFilter.ALL || selectedRegion === region;
-                    const provinceStats = provinceData.get(provinceNameTh);
-                    const partyData = getProvincePartyData(provinceNameTh);
-                    const winningParty = getProvinceWinningParty(provinceNameTh);
+                  geographies
+                    .filter((geo) => geo.properties?.name)
+                    .map((geo) => {
+                      const provinceNameEn = geo.properties.name;
+                      const provinceNameTh = toThaiProvince(provinceNameEn);
+                      const region = getRegion(provinceNameEn);
+                      const isSelected = selectedRegion === RegionFilter.ALL || selectedRegion === region;
+                      const provinceStats = provinceData.get(provinceNameTh);
+                      const fillColor = getFillColor(provinceNameEn, provinceNameTh, isSelected);
 
-                    const fillColor = getFillColor(provinceNameEn, provinceNameTh, isSelected);
-
-                    return (
-                      <Geography
-                        key={geo.rsmKey}
-                        geography={geo}
+                      return (
+                        <Geography
+                          key={geo.rsmKey}
+                          geography={geo}
                         onMouseEnter={() => {
                           if (provinceStats) {
                             setTooltipContent(provinceStats);
@@ -209,13 +229,13 @@ export const ThailandMap: React.FC<ThailandMapProps> = ({ regionStats, selectedR
                           }
                         }}
                       />
-                    );
-                  })
+                      );
+                    })
                 }
               </Geographies>
 
               {/* Province Labels with District Count */}
-              {geoData && Object.entries(PROVINCE_CENTROIDS).map(([provinceName, coords]) => {
+              {Object.entries(PROVINCE_CENTROIDS).map(([provinceName, coords]) => {
                 const provinceNameTh = toThaiProvince(provinceName);
                 const partyData = getProvincePartyData(provinceNameTh);
                 const region = getRegion(provinceName);
@@ -273,7 +293,7 @@ export const ThailandMap: React.FC<ThailandMapProps> = ({ regionStats, selectedR
                 </div>
                 {viewMode === 'party' && (() => {
                   const partyData = getProvincePartyData(tooltipContent.nameTh);
-                  if (!partyData) return null;
+                  if (!partyData || !partyData.partySeats) return null;
                   return (
                     <div className="border-t border-gray-600 pt-1 mt-1">
                       <div className="text-gray-300 mb-1">ที่นั่งตามพรรค:</div>

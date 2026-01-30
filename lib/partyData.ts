@@ -430,7 +430,7 @@ export function getProvincePartyData(provinceTh: string): ProvincePartyData | un
  */
 export function getBangkokDistrictsByParty(): { partyId: string; party: PoliticalParty; seats: number }[] {
   const bkkData = PROVINCE_PARTY_MAP.get("กรุงเทพมหานคร");
-  if (!bkkData) return [];
+  if (!bkkData || !bkkData.partySeats) return [];
 
   return Object.entries(bkkData.partySeats)
     .map(([partyId, seats]) => ({
@@ -449,6 +449,9 @@ export function getPartySeatSummary(): { partyId: string; party: PoliticalParty;
   const summary = new Map<string, { totalSeats: number; provinces: number }>();
 
   PROVINCE_PARTY_DATA.forEach(province => {
+    if (!province.partySeats || typeof province.partySeats !== 'object') {
+      return;
+    }
     Object.entries(province.partySeats).forEach(([partyId, seats]) => {
       if (!summary.has(partyId)) {
         summary.set(partyId, { totalSeats: 0, provinces: 0 });

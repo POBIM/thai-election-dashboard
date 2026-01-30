@@ -18,9 +18,15 @@ export default function Home() {
     try {
       const response = await fetch('/api/election-data');
       const result = await response.json();
-      setData(result);
+      if (result && Array.isArray(result.regions)) {
+        setData(result);
+      } else {
+        console.error('Invalid election data format:', result);
+        setData(null);
+      }
     } catch (error) {
       console.error('Error fetching data:', error);
+      setData(null);
     } finally {
       setLoading(false);
     }
@@ -31,7 +37,7 @@ export default function Home() {
   }, [fetchData]);
 
   const { filteredDistricts, regionStats, totalVotersFiltered, totalActualVotersFiltered, turnoutPercentage, totalInvalidVotes, totalNoVotes } = useMemo(() => {
-    if (!data) return {
+    const emptyResult = {
       allDistricts: [],
       filteredDistricts: [],
       regionStats: [],
@@ -41,6 +47,10 @@ export default function Home() {
       totalInvalidVotes: 0,
       totalNoVotes: 0
     };
+
+    if (!data || !Array.isArray(data.regions)) {
+      return emptyResult;
+    }
 
     const all = data.regions.flatMap(r => r.districts);
 
@@ -60,7 +70,7 @@ export default function Home() {
     return {
       allDistricts: all,
       filteredDistricts: filtered,
-      regionStats: data.regions,
+      regionStats: data.regions ?? [],
       totalVotersFiltered: total,
       totalActualVotersFiltered: totalActual,
       turnoutPercentage: turnout,
