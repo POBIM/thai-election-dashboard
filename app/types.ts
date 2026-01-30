@@ -92,3 +92,27 @@ export interface ElectionSimulationConfig {
   turnoutTarget?: number;
   swingFactors?: Record<string, number>; // party id -> swing percentage
 }
+
+export interface CustomSimulationConfig {
+  partyConstituencySeats: Record<string, number>;
+  partyListSeats: Record<string, number>;
+}
+
+export interface CustomSimulationResult {
+  partyResults: PartyResult[];
+  totalConstituencySeats: number; // should always = 400
+  totalPartyListSeats: number; // should always = 100
+  totalSeats: number; // should always = 500
+  canFormGovernment: {
+    partyId: string;
+    partyName: string;
+    totalSeats: number;
+    canForm: boolean;
+    seatsNeeded: number;
+  }[];
+  suggestedCoalitions: {
+    parties: { partyId: string; partyName: string; seats: number }[];
+    totalSeats: number;
+    canFormGovernment: boolean;
+  }[];
+}

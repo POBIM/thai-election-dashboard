@@ -5,7 +5,7 @@
  * For 2026 Thai General Election (February 8, 2026)
  */
 
-import { RegionFilter, PartyResult, DistrictResult, ElectionSimulationConfig, PoliticalParty } from '@/app/types';
+import { RegionFilter, PartyResult, DistrictResult, ElectionSimulationConfig, PoliticalParty, CustomSimulationConfig, CustomSimulationResult } from '@/app/types';
 import {
   THAI_PARTIES,
   PARTY_BY_ID,
@@ -283,3 +283,150 @@ export function getRegionalCompetitiveness(region: RegionFilter): 'safe' | 'lean
 
 // Export 2023 baseline for comparison
 export const BASELINE_2023 = ELECTION_2023_RESULTS;
+
+export function runCustomSimulation(config: CustomSimulationConfig): CustomSimulationResult {
+  const { partyConstituencySeats, partyListSeats } = config;
+
+  const allPartyIds = new Set([
+    ...Object.keys(partyConstituencySeats),
+    ...Object.keys(partyListSeats)
+  ]);
+
+  const partyResults: PartyResult[] = [];
+
+  allPartyIds.forEach(partyId => {
+    const constituency = partyConstituencySeats[partyId] || 0;
+    const list = partyListSeats[partyId] || 0;
+    const total = constituency + list;
+
+    if (total <= 0) return;
+
+    const totalSeatsSum = Object.values(partyConstituencySeats).reduce((s, v) => s + v, 0) +
+                          Object.values(partyListSeats).reduce((s, v) => s + v, 0);
+    const voteShare = totalSeatsSum > 0 ? total / totalSeatsSum : 0;
+    const estimatedVotes = Math.round(voteShare * 40000000);
+
+    partyResults.push({
+      partyId,
+      constituencySeats: constituency,
+      partyListSeats: list,
+      totalSeats: total,
+      voteCount: estimatedVotes,
+      votePercentage: voteShare * 100
+    });
+  });
+
+  partyResults.sort((a, b) => b.totalSeats - a.totalSeats);
+
+  const totalConstituencySeats = partyResults.reduce((sum, r) => sum + r.constituencySeats, 0);
+  const totalPartyListSeats = partyResults.reduce((sum, r) => sum + r.partyListSeats, 0);
+
+  const canFormGovernment = partyResults.map(result => {
+    const party = PARTY_BY_ID.get(result.partyId);
+    return {
+      partyId: result.partyId,
+      partyName: party?.nameTh || result.partyId,
+      totalSeats: result.totalSeats,
+      canForm: result.totalSeats >= MAJORITY_THRESHOLD,
+      seatsNeeded: Math.max(0, MAJORITY_THRESHOLD - result.totalSeats)
+    };
+  });
+
+  const suggestedCoalitions = generateCoalitionSuggestions(partyResults);
+
+  return {
+    partyResults,
+    totalConstituencySeats,
+    totalPartyListSeats,
+    totalSeats: totalConstituencySeats + totalPartyListSeats,
+    canFormGovernment,
+    suggestedCoalitions
+  };
+}
+
+function generateCoalitionSuggestions(results: PartyResult[]): CustomSimulationResult['suggestedCoalitions'] {
+  const coalitions: CustomSimulationResult['suggestedCoalitions'] = [];
+  const sorted = [...results].sort((a, b) => b.totalSeats - a.totalSeats);
+
+  if (sorted.length === 0) return coalitions;
+
+  const buildCoalition = (startIdx: number, maxParties: number) => {
+    const parties: { partyId: string; partyName: string; seats: number }[] = [];
+    let totalSeats = 0;
+
+    for (let i = startIdx; i < sorted.length && parties.length < maxParties; i++) {
+      const result = sorted[i];
+      const party = PARTY_BY_ID.get(result.partyId);
+      parties.push({
+        partyId: result.partyId,
+        partyName: party?.nameTh || result.partyId,
+        seats: result.totalSeats
+      });
+      totalSeats += result.totalSeats;
+
+      if (totalSeats >= MAJORITY_THRESHOLD) break;
+    }
+
+    return { parties, totalSeats, canFormGovernment: totalSeats >= MAJORITY_THRESHOLD };
+  };
+
+  coalitions.push(buildCoalition(0, 6));
+
+  if (sorted.length > 1) {
+    coalitions.push(buildCoalition(1, 6));
+  }
+
+  const governmentParties = sorted.filter(r => {
+    const party = PARTY_BY_ID.get(r.partyId);
+    return party?.coalition === 'government';
+  });
+
+  if (governmentParties.length > 0) {
+    const parties = governmentParties.map(r => {
+      const party = PARTY_BY_ID.get(r.partyId);
+      return {
+        partyId: r.partyId,
+        partyName: party?.nameTh || r.partyId,
+        seats: r.totalSeats
+      };
+    });
+    const totalSeats = parties.reduce((sum, p) => sum + p.seats, 0);
+    coalitions.push({ parties, totalSeats, canFormGovernment: totalSeats >= MAJORITY_THRESHOLD });
+  }
+
+  const oppositionParties = sorted.filter(r => {
+    const party = PARTY_BY_ID.get(r.partyId);
+    return party?.coalition === 'opposition';
+  });
+
+  if (oppositionParties.length > 0) {
+    const parties = oppositionParties.map(r => {
+      const party = PARTY_BY_ID.get(r.partyId);
+      return {
+        partyId: r.partyId,
+        partyName: party?.nameTh || r.partyId,
+        seats: r.totalSeats
+      };
+    });
+    const totalSeats = parties.reduce((sum, p) => sum + p.seats, 0);
+    coalitions.push({ parties, totalSeats, canFormGovernment: totalSeats >= MAJORITY_THRESHOLD });
+  }
+
+  return coalitions;
+}
+
+export function getDefaultConstituencySeats(): Record<string, number> {
+  const defaults: Record<string, number> = {};
+  ELECTION_2023_RESULTS.forEach(result => {
+    defaults[result.partyId] = result.constituencySeats;
+  });
+  return defaults;
+}
+
+export function getDefaultPartyListSeats(): Record<string, number> {
+  const defaults: Record<string, number> = {};
+  ELECTION_2023_RESULTS.forEach(result => {
+    defaults[result.partyId] = result.partyListSeats;
+  });
+  return defaults;
+}

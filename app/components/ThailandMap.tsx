@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo, useEffect } from 'react';
 import { ComposableMap, Geographies, Geography, Marker } from 'react-simple-maps';
-import type { RegionData } from '../types';
+import type { RegionData, CustomSimulationResult } from '../types';
 import { RegionFilter } from '../types';
 import {
   toThaiProvince,
@@ -54,10 +54,12 @@ interface ThailandMapProps {
   regionStats: RegionData[];
   selectedRegion: string;
   onSelectRegion: (region: string) => void;
+  simulationResult?: CustomSimulationResult | null;
 }
 
-export const ThailandMap: React.FC<ThailandMapProps> = ({ regionStats, selectedRegion, onSelectRegion }) => {
+export const ThailandMap: React.FC<ThailandMapProps> = ({ regionStats, selectedRegion, onSelectRegion, simulationResult }) => {
   const safeRegionStats = regionStats ?? [];
+  const isSimulationActive = !!simulationResult;
   
   const [geoData, setGeoData] = useState<object | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -101,16 +103,100 @@ export const ThailandMap: React.FC<ThailandMapProps> = ({ regionStats, selectedR
     return aggregateByProvince(safeRegionStats);
   }, [safeRegionStats]);
 
-  // Get party seat summary for legend
-  const partySummary = useMemo(() => getPartySeatSummary(), []);
+  const partySummary = useMemo(() => {
+    if (simulationResult) {
+      return simulationResult.partyResults.map(result => ({
+        partyId: result.partyId,
+        party: PARTY_BY_ID.get(result.partyId)!,
+        totalSeats: result.totalSeats,
+        constituencySeats: result.constituencySeats,
+        partyListSeats: result.partyListSeats,
+        provinces: 0
+      })).filter(item => item.party);
+    }
+    return getPartySeatSummary();
+  }, [simulationResult]);
+  
   const bangkokParties = useMemo(() => getBangkokDistrictsByParty(), []);
 
-  // Get fill color based on view mode
+  const simulatedProvinceData = useMemo(() => {
+    if (!simulationResult) return null;
+    
+    const totalConstituency = simulationResult.partyResults.reduce((sum, r) => sum + r.constituencySeats, 0);
+    if (totalConstituency === 0) return null;
+
+    const partyShares = new Map<string, number>();
+    simulationResult.partyResults.forEach(r => {
+      partyShares.set(r.partyId, r.constituencySeats / totalConstituency);
+    });
+
+    const result = new Map<string, { winningPartyId: string; partySeats: Record<string, number>; districtCount: number }>();
+    
+    const provinceNames = [
+      "กรุงเทพมหานคร", "นนทบุรี", "ปทุมธานี", "สมุทรปราการ", "นครปฐม", "สมุทรสาคร", "สมุทรสงคราม",
+      "ชลบุรี", "ระยอง", "ฉะเชิงเทรา", "จันทบุรี", "ตราด", "ปราจีนบุรี", "สระแก้ว", "นครนายก",
+      "พระนครศรีอยุธยา", "อ่างทอง", "สระบุรี", "ลพบุรี", "สิงห์บุรี", "ชัยนาท", "สุพรรณบุรี",
+      "กาญจนบุรี", "ราชบุรี", "เพชรบุรี", "ประจวบคีรีขันธ์",
+      "เชียงใหม่", "เชียงราย", "ลำปาง", "ลำพูน", "แม่ฮ่องสอน", "น่าน", "พะเยา", "แพร่",
+      "อุตรดิตถ์", "ตาก", "สุโขทัย", "พิษณุโลก", "พิจิตร", "เพชรบูรณ์", "กำแพงเพชร", "นครสวรรค์", "อุทัยธานี",
+      "นครราชสีมา", "บุรีรัมย์", "สุรินทร์", "ศรีสะเกษ", "อุบลราชธานี", "ยโสธร", "ชัยภูมิ", "อำนาจเจริญ",
+      "หนองคาย", "หนองบัวลำภู", "อุดรธานี", "เลย", "สกลนคร", "นครพนม", "มุกดาหาร",
+      "กาฬสินธุ์", "ร้อยเอ็ด", "มหาสารคาม", "ขอนแก่น", "บึงกาฬ",
+      "ชุมพร", "สุราษฎร์ธานี", "นครศรีธรรมราช", "กระบี่", "พังงา", "ภูเก็ต", "ระนอง",
+      "พัทลุง", "ตรัง", "สตูล", "สงขลา", "ปัตตานี", "ยะลา", "นราธิวาส"
+    ];
+
+    provinceNames.forEach(provinceName => {
+      const originalProvince = getProvincePartyData(provinceName);
+      if (!originalProvince) return;
+      
+      const districtCount = originalProvince.districtCount;
+      const newPartySeats: Record<string, number> = {};
+      let remainingSeats = districtCount;
+      
+      const sortedParties = Array.from(partyShares.entries()).sort((a, b) => b[1] - a[1]);
+      
+      sortedParties.forEach(([partyId, share], index) => {
+        if (index === sortedParties.length - 1) {
+          newPartySeats[partyId] = Math.max(0, remainingSeats);
+        } else {
+          const seats = Math.round(districtCount * share);
+          newPartySeats[partyId] = seats;
+          remainingSeats -= seats;
+        }
+      });
+
+      Object.keys(newPartySeats).forEach(key => {
+        if (newPartySeats[key] <= 0) delete newPartySeats[key];
+      });
+
+      let winningPartyId = '';
+      let maxSeats = 0;
+      Object.entries(newPartySeats).forEach(([partyId, seats]) => {
+        if (seats > maxSeats) {
+          maxSeats = seats;
+          winningPartyId = partyId;
+        }
+      });
+
+      result.set(provinceName, { winningPartyId, partySeats: newPartySeats, districtCount });
+    });
+
+    return result;
+  }, [simulationResult]);
+
   const getFillColor = (provinceNameEn: string, provinceNameTh: string, isSelected: boolean): string => {
     if (!isSelected) return "#E5E7EB";
 
     switch (viewMode) {
       case 'party': {
+        if (isSimulationActive && simulatedProvinceData) {
+          const simData = simulatedProvinceData.get(provinceNameTh);
+          if (simData) {
+            const party = PARTY_BY_ID.get(simData.winningPartyId);
+            return party?.color || "#9CA3AF";
+          }
+        }
         const party = getProvinceWinningParty(provinceNameTh);
         return party?.color || "#9CA3AF";
       }
@@ -130,8 +216,19 @@ export const ThailandMap: React.FC<ThailandMapProps> = ({ regionStats, selectedR
     <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col h-[700px] relative">
       <div className="flex justify-between items-start mb-4">
         <div>
-          <h3 className="text-lg font-semibold text-gray-800">แผนที่แสดงข้อมูลการเลือกตั้ง (Election Map)</h3>
-          <p className="text-sm text-gray-500">คลิกที่จังหวัดเพื่อดูข้อมูลเฉพาะภาค</p>
+          <h3 className="text-lg font-semibold text-gray-800 flex items-center gap-2">
+            แผนที่แสดงข้อมูลการเลือกตั้ง
+            {isSimulationActive && (
+              <span className="text-xs font-medium px-2 py-0.5 bg-orange-100 text-orange-700 rounded-full">
+                โหมดจำลอง
+              </span>
+            )}
+          </h3>
+          <p className="text-sm text-gray-500">
+            {isSimulationActive 
+              ? 'กำลังแสดงผลการจำลอง - สีและที่นั่งคำนวณจากสัดส่วนที่ตั้งไว้' 
+              : 'คลิกที่จังหวัดเพื่อดูข้อมูลเฉพาะภาค'}
+          </p>
         </div>
         <div className="flex items-center gap-2">
           {(['party', 'region', 'turnout'] as ViewMode[]).map((mode) => (
@@ -270,6 +367,20 @@ export const ThailandMap: React.FC<ThailandMapProps> = ({ regionStats, selectedR
               <div className="font-semibold text-sm flex items-center gap-2">
                 {tooltipContent.nameTh}
                 {viewMode === 'party' && (() => {
+                  if (isSimulationActive && simulatedProvinceData) {
+                    const simData = simulatedProvinceData.get(tooltipContent.nameTh);
+                    if (simData) {
+                      const party = PARTY_BY_ID.get(simData.winningPartyId);
+                      return party ? (
+                        <span
+                          className="px-2 py-0.5 rounded text-xs font-medium"
+                          style={{ backgroundColor: party.color, color: 'white' }}
+                        >
+                          {party.abbreviation}
+                        </span>
+                      ) : null;
+                    }
+                  }
                   const party = getProvinceWinningParty(tooltipContent.nameTh);
                   return party ? (
                     <span
@@ -280,6 +391,9 @@ export const ThailandMap: React.FC<ThailandMapProps> = ({ regionStats, selectedR
                     </span>
                   ) : null;
                 })()}
+                {isSimulationActive && (
+                  <span className="px-1.5 py-0.5 bg-orange-500 text-white text-[10px] rounded">จำลอง</span>
+                )}
               </div>
               <div className="text-gray-400 text-xs mb-2">{tooltipContent.nameEn}</div>
               <div className="space-y-1">
@@ -292,6 +406,30 @@ export const ThailandMap: React.FC<ThailandMapProps> = ({ regionStats, selectedR
                   <span className="font-semibold text-yellow-400">{getProvincePartyData(tooltipContent.nameTh)?.districtCount || tooltipContent.districtCount} เขต</span>
                 </div>
                 {viewMode === 'party' && (() => {
+                  if (isSimulationActive && simulatedProvinceData) {
+                    const simData = simulatedProvinceData.get(tooltipContent.nameTh);
+                    if (simData && simData.partySeats) {
+                      return (
+                        <div className="border-t border-gray-600 pt-1 mt-1">
+                          <div className="text-orange-300 mb-1">ที่นั่งจำลอง:</div>
+                          {Object.entries(simData.partySeats)
+                            .sort(([,a], [,b]) => b - a)
+                            .map(([partyId, seats]) => {
+                              const party = PARTY_BY_ID.get(partyId);
+                              return party ? (
+                                <div key={partyId} className="flex justify-between items-center">
+                                  <span className="flex items-center gap-1">
+                                    <span className="w-2 h-2 rounded-full" style={{ backgroundColor: party.color }}></span>
+                                    {party.abbreviation}
+                                  </span>
+                                  <span>{seats} ที่นั่ง</span>
+                                </div>
+                              ) : null;
+                            })}
+                        </div>
+                      );
+                    }
+                  }
                   const partyData = getProvincePartyData(tooltipContent.nameTh);
                   if (!partyData || !partyData.partySeats) return null;
                   return (
@@ -346,15 +484,41 @@ export const ThailandMap: React.FC<ThailandMapProps> = ({ regionStats, selectedR
 
             {viewMode === 'party' && (
               <div className="space-y-1.5">
-                {partySummary.slice(0, 8).map(({ partyId, party, totalSeats, provinces }) => (
-                  <div key={partyId} className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded" style={{ backgroundColor: party.color }}></div>
-                      <span className="text-gray-700">{party.abbreviation}</span>
+                {isSimulationActive && simulationResult ? (
+                  <>
+                    {simulationResult.partyResults.slice(0, 8).map((result) => {
+                      const party = PARTY_BY_ID.get(result.partyId);
+                      if (!party) return null;
+                      return (
+                        <div key={result.partyId} className="flex items-center justify-between">
+                          <div className="flex items-center gap-2">
+                            <div className="w-3 h-3 rounded" style={{ backgroundColor: party.color }}></div>
+                            <span className="text-gray-700">{party.abbreviation}</span>
+                          </div>
+                          <div className="text-right">
+                            <span className="text-gray-700 font-medium">{result.totalSeats}</span>
+                            <span className="text-gray-400 text-[10px] ml-1">
+                              ({result.constituencySeats}+{result.partyListSeats})
+                            </span>
+                          </div>
+                        </div>
+                      );
+                    })}
+                    <div className="pt-2 mt-2 border-t border-gray-200 text-[10px] text-gray-500">
+                      (เขต + บัญชีรายชื่อ)
                     </div>
-                    <span className="text-gray-500 font-medium">{totalSeats} ที่นั่ง</span>
-                  </div>
-                ))}
+                  </>
+                ) : (
+                  partySummary.slice(0, 8).map((item) => (
+                    <div key={item.partyId} className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <div className="w-3 h-3 rounded" style={{ backgroundColor: item.party.color }}></div>
+                        <span className="text-gray-700">{item.party.abbreviation}</span>
+                      </div>
+                      <span className="text-gray-500 font-medium">{item.totalSeats} ที่นั่ง</span>
+                    </div>
+                  ))
+                )}
               </div>
             )}
 

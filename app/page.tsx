@@ -1,18 +1,53 @@
 'use client';
 
-import React, { useState, useMemo, useEffect } from 'react';
-import { ElectionData, RegionFilter } from './types';
+import React, { useState, useMemo, useEffect, useCallback } from 'react';
+import { ElectionData, RegionFilter, CustomSimulationResult } from './types';
 import { StatsCard } from './components/StatsCard';
 import { VotersByRegionPie, TopDistrictsBar, TurnoutByRegionChart, DistrictTurnoutDistribution } from './components/Charts';
 import { DistrictTable } from './components/DistrictTable';
 import { ThailandMap } from './components/ThailandMap';
-import { Users, MapPin, BarChart3, Globe, Settings, Vote, TrendingUp, AlertCircle } from 'lucide-react';
+import { SimulationDialog } from './components/SimulationDialog';
+import { Users, MapPin, BarChart3, Globe, Settings, Vote, TrendingUp, AlertCircle, Shuffle, X } from 'lucide-react';
 import Link from 'next/link';
+import { runCustomSimulation, getDefaultConstituencySeats, getDefaultPartyListSeats } from '@/lib/partySimulation';
+import { getPartyById, MAJORITY_THRESHOLD } from '@/lib/partyData';
 
 export default function Home() {
   const [data, setData] = useState<ElectionData | null>(null);
   const [loading, setLoading] = useState(true);
   const [selectedRegion, setSelectedRegion] = useState<RegionFilter | string>(RegionFilter.ALL);
+
+  const [isSimDialogOpen, setIsSimDialogOpen] = useState(false);
+  const [constituencySeats, setConstituencySeats] = useState<Record<string, number>>(() => getDefaultConstituencySeats());
+  const [partyListSeats, setPartyListSeats] = useState<Record<string, number>>(() => getDefaultPartyListSeats());
+  const [simulationResult, setSimulationResult] = useState<CustomSimulationResult | null>(null);
+
+  const handleConstituencyChange = useCallback((partyId: string, seats: number) => {
+    setConstituencySeats(prev => ({ ...prev, [partyId]: seats }));
+  }, []);
+
+  const handlePartyListChange = useCallback((partyId: string, seats: number) => {
+    setPartyListSeats(prev => ({ ...prev, [partyId]: seats }));
+  }, []);
+
+  const handleSimulationApply = useCallback(() => {
+    const result = runCustomSimulation({
+      partyConstituencySeats: constituencySeats,
+      partyListSeats: partyListSeats
+    });
+    setSimulationResult(result);
+    setIsSimDialogOpen(false);
+  }, [constituencySeats, partyListSeats]);
+
+  const handleSimulationReset = useCallback(() => {
+    setConstituencySeats(getDefaultConstituencySeats());
+    setPartyListSeats(getDefaultPartyListSeats());
+  }, []);
+
+  const handleClearSimulation = useCallback(() => {
+    setSimulationResult(null);
+    handleSimulationReset();
+  }, [handleSimulationReset]);
 
   const fetchData = React.useCallback(async () => {
     try {
@@ -110,6 +145,14 @@ export default function Home() {
               </div>
             </div>
             <div className="flex items-center gap-4">
+              <button
+                type="button"
+                onClick={() => setIsSimDialogOpen(true)}
+                className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-600 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors"
+              >
+                <Shuffle className="w-4 h-4" />
+                จำลองผลเลือกตั้ง
+              </button>
               <Link
                 href="/admin"
                 className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
@@ -123,6 +166,89 @@ export default function Home() {
       </nav>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
+        {simulationResult && (
+          <div className="bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-200 rounded-xl p-6">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-3">
+                <div className="bg-orange-500 p-2 rounded-lg">
+                  <Shuffle className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h2 className="text-lg font-bold text-gray-900">ผลการจำลอง</h2>
+                  <p className="text-sm text-gray-500">สส. เขต {simulationResult.totalConstituencySeats} + บัญชีรายชื่อ {simulationResult.totalPartyListSeats} = {simulationResult.totalSeats} ที่นั่ง</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => setIsSimDialogOpen(true)}
+                  className="px-3 py-1.5 text-sm font-medium text-orange-700 hover:bg-orange-100 rounded-lg transition-colors"
+                >
+                  แก้ไข
+                </button>
+                <button
+                  type="button"
+                  onClick={handleClearSimulation}
+                  className="p-1.5 text-gray-400 hover:text-gray-600 hover:bg-white rounded-lg transition-colors"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3">
+              {simulationResult.partyResults.slice(0, 6).map((result) => {
+                const party = getPartyById(result.partyId);
+                const canForm = result.totalSeats >= MAJORITY_THRESHOLD;
+                return (
+                  <div
+                    key={result.partyId}
+                    className="bg-white rounded-lg p-3 shadow-sm border border-gray-100"
+                  >
+                    <div className="flex items-center gap-2 mb-2">
+                      <div
+                        className="w-3 h-3 rounded-full"
+                        style={{ backgroundColor: party?.color || '#ccc' }}
+                      />
+                      <span className="text-sm font-medium text-gray-900 truncate">
+                        {party?.nameTh || result.partyId}
+                      </span>
+                    </div>
+                    <div className="text-2xl font-bold text-gray-900">
+                      {result.totalSeats}
+                      {canForm && <span className="ml-1 text-xs text-green-600 font-normal">จัดตั้งรัฐบาลได้</span>}
+                    </div>
+                    <div className="text-xs text-gray-500">
+                      เขต {result.constituencySeats} + ปาร์ตี้ลิสต์ {result.partyListSeats}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {simulationResult.suggestedCoalitions.length > 0 && (
+              <div className="mt-4 pt-4 border-t border-orange-200">
+                <p className="text-sm text-gray-600 mb-2">แนวร่วมที่เป็นไปได้:</p>
+                <div className="flex flex-wrap gap-2">
+                  {simulationResult.suggestedCoalitions.slice(0, 2).map((coalition) => (
+                    <div
+                      key={coalition.parties.map(p => p.partyId).join('-')}
+                      className={`px-3 py-1.5 rounded-full text-sm ${
+                        coalition.canFormGovernment
+                          ? 'bg-green-100 text-green-800'
+                          : 'bg-gray-100 text-gray-600'
+                      }`}
+                    >
+                      {coalition.parties.map(p => p.partyName).join(' + ')} = {coalition.totalSeats} ที่นั่ง
+                      {coalition.canFormGovernment && ' (จัดตั้งรัฐบาลได้)'}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
         <div className="flex flex-wrap gap-2 items-center mb-4">
           <span className="text-sm font-medium text-gray-600 mr-2">กรองตามภูมิภาค:</span>
           {[RegionFilter.ALL, RegionFilter.BANGKOK, RegionFilter.CENTRAL, RegionFilter.NORTH, RegionFilter.NORTHEAST, RegionFilter.SOUTH].map((region) => (
@@ -189,6 +315,7 @@ export default function Home() {
             regionStats={regionStats}
             selectedRegion={selectedRegion}
             onSelectRegion={(region) => setSelectedRegion(region as string)}
+            simulationResult={simulationResult}
           />
 
           <div className="flex flex-col gap-6">
@@ -225,6 +352,17 @@ export default function Home() {
           <p>อัปเดตล่าสุด: {new Date(data.lastUpdated).toLocaleString('th-TH')}</p>
         </div>
       </main>
+
+      <SimulationDialog
+        isOpen={isSimDialogOpen}
+        onClose={() => setIsSimDialogOpen(false)}
+        constituencySeats={constituencySeats}
+        partyListSeats={partyListSeats}
+        onConstituencyChange={handleConstituencyChange}
+        onPartyListChange={handlePartyListChange}
+        onApply={handleSimulationApply}
+        onReset={handleSimulationReset}
+      />
     </div>
   );
 }
