@@ -22,30 +22,34 @@ interface ProvinceStats {
 }
 
 const PROVINCE_REGION_MAP: Record<string, string> = {
-  "เชียงราย": RegionFilter.NORTH, "เชียงใหม่": RegionFilter.NORTH, "น่าน": RegionFilter.NORTH, "พะเยา": RegionFilter.NORTH,
-  "แพร่": RegionFilter.NORTH, "แม่ฮ่องสอน": RegionFilter.NORTH, "ลำปาง": RegionFilter.NORTH, "ลำพูน": RegionFilter.NORTH,
-  "อุตรดิตถ์": RegionFilter.NORTH, "ตาก": RegionFilter.NORTH, "สุโขทัย": RegionFilter.NORTH, "พิษณุโลก": RegionFilter.NORTH,
-  "พิจิตร": RegionFilter.NORTH, "เพชรบูรณ์": RegionFilter.NORTH, "กำแพงเพชร": RegionFilter.NORTH, "นครสวรรค์": RegionFilter.NORTH,
-  "อุทัยธานี": RegionFilter.NORTH,
-  "กาฬสินธุ์": RegionFilter.NORTHEAST, "ขอนแก่น": RegionFilter.NORTHEAST, "ชัยภูมิ": RegionFilter.NORTHEAST, "นครพนม": RegionFilter.NORTHEAST,
-  "นครราชสีมา": RegionFilter.NORTHEAST, "บึงกาฬ": RegionFilter.NORTHEAST, "บุรีรัมย์": RegionFilter.NORTHEAST, "มหาสารคาม": RegionFilter.NORTHEAST,
-  "มุกดาหาร": RegionFilter.NORTHEAST, "ยโสธร": RegionFilter.NORTHEAST, "ร้อยเอ็ด": RegionFilter.NORTHEAST, "เลย": RegionFilter.NORTHEAST,
-  "สกลนคร": RegionFilter.NORTHEAST, "สุรินทร์": RegionFilter.NORTHEAST, "ศรีสะเกษ": RegionFilter.NORTHEAST, "หนองคาย": RegionFilter.NORTHEAST,
-  "หนองบัวลำภู": RegionFilter.NORTHEAST, "อุดรธานี": RegionFilter.NORTHEAST, "อุบลราชธานี": RegionFilter.NORTHEAST, "อำนาจเจริญ": RegionFilter.NORTHEAST,
-  "กรุงเทพมหานคร": RegionFilter.BANGKOK,
-  "ชัยนาท": RegionFilter.CENTRAL, "นครนายก": RegionFilter.CENTRAL, "นครปฐม": RegionFilter.CENTRAL,
-  "นนทบุรี": RegionFilter.CENTRAL, "ปทุมธานี": RegionFilter.CENTRAL, "พระนครศรีอยุธยา": RegionFilter.CENTRAL,
-  "ลพบุรี": RegionFilter.CENTRAL, "สมุทรปราการ": RegionFilter.CENTRAL, "สมุทรสงคราม": RegionFilter.CENTRAL,
-  "สมุทรสาคร": RegionFilter.CENTRAL, "สิงห์บุรี": RegionFilter.CENTRAL, "สุพรรณบุรี": RegionFilter.CENTRAL,
-  "สระบุรี": RegionFilter.CENTRAL, "อ่างทอง": RegionFilter.CENTRAL, "จันทบุรี": RegionFilter.CENTRAL,
-  "ฉะเชิงเทรา": RegionFilter.CENTRAL, "ชลบุรี": RegionFilter.CENTRAL, "ตราด": RegionFilter.CENTRAL,
-  "ปราจีนบุรี": RegionFilter.CENTRAL, "ระยอง": RegionFilter.CENTRAL, "สระแก้ว": RegionFilter.CENTRAL,
-  "กาญจนบุรี": RegionFilter.CENTRAL, "ประจวบคีรีขันธ์": RegionFilter.CENTRAL, "เพชรบุรี": RegionFilter.CENTRAL,
-  "ราชบุรี": RegionFilter.CENTRAL,
-  "กระบี่": RegionFilter.SOUTH, "ชุมพร": RegionFilter.SOUTH, "ตรัง": RegionFilter.SOUTH, "นครศรีธรรมราช": RegionFilter.SOUTH,
-  "นราธิวาส": RegionFilter.SOUTH, "ปัตตานี": RegionFilter.SOUTH, "พังงา": RegionFilter.SOUTH, "พัทลุง": RegionFilter.SOUTH,
-  "ภูเก็ต": RegionFilter.SOUTH, "ยะลา": RegionFilter.SOUTH, "ระนอง": RegionFilter.SOUTH, "สงขลา": RegionFilter.SOUTH,
-  "สตูล": RegionFilter.SOUTH, "สุราษฎร์ธานี": RegionFilter.SOUTH
+  "Chiang Rai": RegionFilter.NORTH, "Chiang Mai": RegionFilter.NORTH, "Nan": RegionFilter.NORTH, "Phayao": RegionFilter.NORTH,
+  "Phrae": RegionFilter.NORTH, "Mae Hong Son": RegionFilter.NORTH, "Lampang": RegionFilter.NORTH, "Lamphun": RegionFilter.NORTH,
+  "Uttaradit": RegionFilter.NORTH, "Tak": RegionFilter.NORTH, "Sukhothai": RegionFilter.NORTH, "Phitsanulok": RegionFilter.NORTH,
+  "Phichit": RegionFilter.NORTH, "Phetchabun": RegionFilter.NORTH, "Kamphaeng Phet": RegionFilter.NORTH, "Nakhon Sawan": RegionFilter.NORTH,
+  "Uthai Thani": RegionFilter.NORTH,
+
+  "Kalasin": RegionFilter.NORTHEAST, "Khon Kaen": RegionFilter.NORTHEAST, "Chaiyaphum": RegionFilter.NORTHEAST, "Nakhon Phanom": RegionFilter.NORTHEAST,
+  "Nakhon Ratchasima": RegionFilter.NORTHEAST, "Bueng Kan": RegionFilter.NORTHEAST, "Buri Ram": RegionFilter.NORTHEAST, "Maha Sarakham": RegionFilter.NORTHEAST,
+  "Mukdahan": RegionFilter.NORTHEAST, "Yasothon": RegionFilter.NORTHEAST, "Roi Et": RegionFilter.NORTHEAST, "Loei": RegionFilter.NORTHEAST,
+  "Sakon Nakhon": RegionFilter.NORTHEAST, "Surin": RegionFilter.NORTHEAST, "Si Sa Ket": RegionFilter.NORTHEAST, "Nong Khai": RegionFilter.NORTHEAST,
+  "Nong Bua Lam Phu": RegionFilter.NORTHEAST, "Udon Thani": RegionFilter.NORTHEAST, "Ubon Ratchathani": RegionFilter.NORTHEAST, "Amnat Charoen": RegionFilter.NORTHEAST,
+
+  "Bangkok": RegionFilter.BANGKOK, "Bangkok Metropolis": RegionFilter.BANGKOK,
+
+  "Chai Nat": RegionFilter.CENTRAL, "Nakhon Nayok": RegionFilter.CENTRAL, "Nakhon Pathom": RegionFilter.CENTRAL,
+  "Nonthaburi": RegionFilter.CENTRAL, "Pathum Thani": RegionFilter.CENTRAL, "Phra Nakhon Si Ayutthaya": RegionFilter.CENTRAL,
+  "Lop Buri": RegionFilter.CENTRAL, "Samut Prakan": RegionFilter.CENTRAL, "Samut Songkhram": RegionFilter.CENTRAL,
+  "Samut Sakhon": RegionFilter.CENTRAL, "Sing Buri": RegionFilter.CENTRAL, "Suphan Buri": RegionFilter.CENTRAL,
+  "Saraburi": RegionFilter.CENTRAL, "Ang Thong": RegionFilter.CENTRAL, "Chanthaburi": RegionFilter.CENTRAL,
+  "Chachoengsao": RegionFilter.CENTRAL, "Chon Buri": RegionFilter.CENTRAL, "Trat": RegionFilter.CENTRAL,
+  "Prachin Buri": RegionFilter.CENTRAL, "Rayong": RegionFilter.CENTRAL, "Sa Kaeo": RegionFilter.CENTRAL,
+  "Kanchanaburi": RegionFilter.CENTRAL, "Prachuap Khiri Khan": RegionFilter.CENTRAL, "Phetchaburi": RegionFilter.CENTRAL,
+  "Ratchaburi": RegionFilter.CENTRAL,
+
+  "Krabi": RegionFilter.SOUTH, "Chumphon": RegionFilter.SOUTH, "Trang": RegionFilter.SOUTH, "Nakhon Si Thammarat": RegionFilter.SOUTH,
+  "Narathiwat": RegionFilter.SOUTH, "Pattani": RegionFilter.SOUTH, "Phangnga": RegionFilter.SOUTH, "Phatthalung": RegionFilter.SOUTH,
+  "Phuket": RegionFilter.SOUTH, "Yala": RegionFilter.SOUTH, "Ranong": RegionFilter.SOUTH, "Songkhla": RegionFilter.SOUTH,
+  "Satun": RegionFilter.SOUTH, "Surat Thani": RegionFilter.SOUTH
 };
 
 const REGION_COLORS: Record<string, string> = {
@@ -118,10 +122,6 @@ export const ThailandMap: React.FC<ThailandMapProps> = ({ regionStats, selectedR
     return PROVINCE_REGION_MAP[provinceName] || RegionFilter.CENTRAL;
   };
 
-  const getRegionStats = (regionName: string) => {
-    return regionStats.find(r => r.regionName === regionName);
-  };
-
   const formatNumber = (num: number) => num.toLocaleString();
 
   return (
@@ -172,16 +172,15 @@ export const ThailandMap: React.FC<ThailandMapProps> = ({ regionStats, selectedR
             }}
             className="w-full h-full"
             width={400}
-            height={500}
+            height={800}
           >
             <Geographies geography={geoData}>
               {({ geographies }) =>
                 geographies.map((geo) => {
                   const provinceName = geo.properties.name || geo.properties.NAME_1;
                   const region = getRegionFromProvince(provinceName);
-                  const isSelected = selectedRegion === RegionFilter.ALL || selectedRegion === region;
+                  const isSelected = String(selectedRegion) === String(RegionFilter.ALL) || String(selectedRegion) === String(region);
                   const provinceStats = provinceData[provinceName];
-                  const regionStatsData = getRegionStats(region);
 
                   let fillColor: string;
                   if (showByTurnout && provinceStats) {
@@ -268,7 +267,7 @@ export const ThailandMap: React.FC<ThailandMapProps> = ({ regionStats, selectedR
 
         <div className="absolute top-4 right-4 bg-white/95 p-4 rounded-lg shadow-sm border border-gray-100 text-xs space-y-3 backdrop-blur-sm max-w-[180px]">
           <div className="font-semibold text-gray-700 mb-2">
-            {showByTurnout ? 'ร้อยละการมาใช้สิทธิ' : 'ภูมิภาค'}
+            {showByTurnout ? 'ร้อยละการมาใช้สิทธิ' : 'เลือกภูมิภาค'}
           </div>
           
           {showByTurnout ? (
@@ -291,25 +290,49 @@ export const ThailandMap: React.FC<ThailandMapProps> = ({ regionStats, selectedR
               </div>
             </div>
           ) : (
-            <div className="space-y-2">
-              {Object.keys(REGION_COLORS).filter(k => k !== 'Default').map(region => (
-                <button
-                  key={region}
-                  type="button"
-                  onClick={() => onSelectRegion(region)}
-                  className="flex items-center gap-2 w-full text-left hover:bg-gray-50 p-1 rounded transition-colors"
-                >
-                  <div className="w-3 h-3 rounded-full" style={{ backgroundColor: REGION_COLORS[region] }}></div>
-                  <span className={`${selectedRegion === region ? 'font-bold text-gray-900' : 'text-gray-600'}`}>{region}</span>
-                </button>
+            <div className="space-y-1">
+              {[
+                { key: RegionFilter.ALL, label: 'ทั้งหมด', color: 'gradient' },
+                { key: RegionFilter.BANGKOK, label: 'กรุงเทพฯ', color: REGION_COLORS[RegionFilter.BANGKOK] },
+                { key: RegionFilter.CENTRAL, label: 'ภาคกลาง', color: REGION_COLORS[RegionFilter.CENTRAL] },
+                { key: RegionFilter.NORTH, label: 'ภาคเหนือ', color: REGION_COLORS[RegionFilter.NORTH] },
+                { key: RegionFilter.NORTHEAST, label: 'ภาคอีสาน', color: REGION_COLORS[RegionFilter.NORTHEAST] },
+                { key: RegionFilter.SOUTH, label: 'ภาคใต้', color: REGION_COLORS[RegionFilter.SOUTH] },
+              ].map((item, index) => (
+                <React.Fragment key={item.key}>
+                  {index === 1 && <div className="border-t border-gray-200 my-1"></div>}
+                  <button
+                    type="button"
+                    onClick={() => onSelectRegion(item.key)}
+                    className={`flex items-center gap-2 w-full text-left p-1.5 rounded transition-all ${
+                      selectedRegion === item.key 
+                        ? 'bg-blue-100 ring-1 ring-blue-400' 
+                        : 'hover:bg-gray-50'
+                    }`}
+                  >
+                    <div 
+                      className={`w-3 h-3 rounded-full ${item.color === 'gradient' ? 'bg-gradient-to-r from-green-400 via-yellow-400 to-purple-400' : ''}`}
+                      style={item.color !== 'gradient' ? { backgroundColor: item.color } : undefined}
+                    ></div>
+                    <span className={`${selectedRegion === item.key ? 'font-bold text-blue-700' : 'text-gray-600'}`}>
+                      {item.label}
+                    </span>
+                  </button>
+                </React.Fragment>
               ))}
             </div>
           )}
         </div>
 
         {selectedRegion !== RegionFilter.ALL && (
-          <div className="absolute top-4 left-4 bg-blue-50 border border-blue-200 text-blue-800 px-4 py-2 rounded-lg text-sm font-medium">
-            กำลังแสดง: {selectedRegion}
+          <div className="absolute top-4 left-4 bg-blue-50 border border-blue-200 text-blue-800 px-4 py-2 rounded-lg text-sm font-medium shadow-sm">
+            กำลังแสดง: {
+              selectedRegion === RegionFilter.BANGKOK ? 'กรุงเทพฯ' :
+              selectedRegion === RegionFilter.CENTRAL ? 'ภาคกลาง' :
+              selectedRegion === RegionFilter.NORTH ? 'ภาคเหนือ' :
+              selectedRegion === RegionFilter.NORTHEAST ? 'ภาคอีสาน' :
+              selectedRegion === RegionFilter.SOUTH ? 'ภาคใต้' : selectedRegion
+            }
           </div>
         )}
       </div>
