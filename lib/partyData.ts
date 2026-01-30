@@ -301,3 +301,170 @@ export const ELECTION_2023_RESULTS: PartyResult[] = [
 
 // Note: Move Forward Party (ก้าวไกล) was dissolved in 2024 and succeeded by People's Party (ประชาชน)
 // The data above reflects the transition where PP inherits MFP's political base
+
+// ============================================================================
+// Province Winning Party Data (Based on 2023 Election Results)
+// ============================================================================
+
+export interface ProvincePartyData {
+  province: string;         // Thai province name
+  winningPartyId: string;   // Party that won most seats
+  districtCount: number;    // Total electoral districts
+  partySeats: Record<string, number>; // Seats won by each party
+}
+
+// Province-level party wins based on 2023 constituency results
+export const PROVINCE_PARTY_DATA: ProvincePartyData[] = [
+  // Bangkok (33 districts) - People's Party dominated
+  { province: "กรุงเทพมหานคร", winningPartyId: "pp", districtCount: 33, partySeats: { pp: 32, ptp: 1 } },
+
+  // Central Region
+  { province: "นนทบุรี", winningPartyId: "pp", districtCount: 6, partySeats: { pp: 5, ptp: 1 } },
+  { province: "ปทุมธานี", winningPartyId: "pp", districtCount: 5, partySeats: { pp: 4, ptp: 1 } },
+  { province: "สมุทรปราการ", winningPartyId: "pp", districtCount: 6, partySeats: { pp: 5, bjt: 1 } },
+  { province: "นครปฐม", winningPartyId: "pp", districtCount: 4, partySeats: { pp: 3, bjt: 1 } },
+  { province: "สมุทรสาคร", winningPartyId: "pp", districtCount: 2, partySeats: { pp: 2 } },
+  { province: "สมุทรสงคราม", winningPartyId: "pp", districtCount: 1, partySeats: { pp: 1 } },
+  { province: "ชลบุรี", winningPartyId: "bjt", districtCount: 8, partySeats: { bjt: 5, pp: 3 } },
+  { province: "ระยอง", winningPartyId: "pp", districtCount: 4, partySeats: { pp: 3, bjt: 1 } },
+  { province: "ฉะเชิงเทรา", winningPartyId: "pp", districtCount: 4, partySeats: { pp: 2, bjt: 2 } },
+  { province: "จันทบุรี", winningPartyId: "bjt", districtCount: 3, partySeats: { bjt: 2, pp: 1 } },
+  { province: "ตราด", winningPartyId: "bjt", districtCount: 1, partySeats: { bjt: 1 } },
+  { province: "ปราจีนบุรี", winningPartyId: "bjt", districtCount: 3, partySeats: { bjt: 2, pp: 1 } },
+  { province: "สระแก้ว", winningPartyId: "bjt", districtCount: 3, partySeats: { bjt: 2, ptp: 1 } },
+  { province: "นครนายก", winningPartyId: "pp", districtCount: 1, partySeats: { pp: 1 } },
+  { province: "พระนครศรีอยุธยา", winningPartyId: "ptp", districtCount: 4, partySeats: { ptp: 2, pp: 1, bjt: 1 } },
+  { province: "อ่างทอง", winningPartyId: "ptp", districtCount: 1, partySeats: { ptp: 1 } },
+  { province: "สระบุรี", winningPartyId: "pp", districtCount: 4, partySeats: { pp: 2, bjt: 1, ptp: 1 } },
+  { province: "ลพบุรี", winningPartyId: "ptp", districtCount: 4, partySeats: { ptp: 2, bjt: 1, pp: 1 } },
+  { province: "สิงห์บุรี", winningPartyId: "ptp", districtCount: 1, partySeats: { ptp: 1 } },
+  { province: "ชัยนาท", winningPartyId: "ptp", districtCount: 2, partySeats: { ptp: 2 } },
+  { province: "สุพรรณบุรี", winningPartyId: "ctp", districtCount: 4, partySeats: { ctp: 3, ptp: 1 } },
+  { province: "กาญจนบุรี", winningPartyId: "bjt", districtCount: 4, partySeats: { bjt: 2, pp: 1, ptp: 1 } },
+  { province: "ราชบุรี", winningPartyId: "bjt", districtCount: 4, partySeats: { bjt: 2, pp: 1, ptp: 1 } },
+  { province: "เพชรบุรี", winningPartyId: "dem", districtCount: 2, partySeats: { dem: 1, bjt: 1 } },
+  { province: "ประจวบคีรีขันธ์", winningPartyId: "dem", districtCount: 2, partySeats: { dem: 1, bjt: 1 } },
+
+  // North Region
+  { province: "เชียงใหม่", winningPartyId: "ptp", districtCount: 10, partySeats: { ptp: 7, pp: 3 } },
+  { province: "เชียงราย", winningPartyId: "ptp", districtCount: 7, partySeats: { ptp: 5, pp: 2 } },
+  { province: "ลำปาง", winningPartyId: "ptp", districtCount: 4, partySeats: { ptp: 3, pp: 1 } },
+  { province: "ลำพูน", winningPartyId: "ptp", districtCount: 2, partySeats: { ptp: 2 } },
+  { province: "แม่ฮ่องสอน", winningPartyId: "ptp", districtCount: 1, partySeats: { ptp: 1 } },
+  { province: "น่าน", winningPartyId: "ptp", districtCount: 2, partySeats: { ptp: 2 } },
+  { province: "พะเยา", winningPartyId: "ptp", districtCount: 2, partySeats: { ptp: 2 } },
+  { province: "แพร่", winningPartyId: "ptp", districtCount: 2, partySeats: { ptp: 2 } },
+  { province: "อุตรดิตถ์", winningPartyId: "ptp", districtCount: 2, partySeats: { ptp: 2 } },
+  { province: "ตาก", winningPartyId: "ptp", districtCount: 3, partySeats: { ptp: 2, bjt: 1 } },
+  { province: "สุโขทัย", winningPartyId: "ptp", districtCount: 3, partySeats: { ptp: 2, bjt: 1 } },
+  { province: "พิษณุโลก", winningPartyId: "ptp", districtCount: 5, partySeats: { ptp: 3, pp: 1, bjt: 1 } },
+  { province: "พิจิตร", winningPartyId: "ptp", districtCount: 3, partySeats: { ptp: 2, bjt: 1 } },
+  { province: "เพชรบูรณ์", winningPartyId: "ptp", districtCount: 5, partySeats: { ptp: 4, bjt: 1 } },
+  { province: "กำแพงเพชร", winningPartyId: "ptp", districtCount: 4, partySeats: { ptp: 3, bjt: 1 } },
+  { province: "นครสวรรค์", winningPartyId: "ptp", districtCount: 5, partySeats: { ptp: 3, bjt: 2 } },
+  { province: "อุทัยธานี", winningPartyId: "ptp", districtCount: 2, partySeats: { ptp: 2 } },
+
+  // Northeast Region
+  { province: "นครราชสีมา", winningPartyId: "ptp", districtCount: 15, partySeats: { ptp: 8, bjt: 4, pp: 3 } },
+  { province: "บุรีรัมย์", winningPartyId: "bjt", districtCount: 9, partySeats: { bjt: 8, ptp: 1 } },
+  { province: "สุรินทร์", winningPartyId: "ptp", districtCount: 7, partySeats: { ptp: 4, bjt: 3 } },
+  { province: "ศรีสะเกษ", winningPartyId: "ptp", districtCount: 8, partySeats: { ptp: 5, bjt: 3 } },
+  { province: "อุบลราชธานี", winningPartyId: "ptp", districtCount: 11, partySeats: { ptp: 8, bjt: 2, pp: 1 } },
+  { province: "ยโสธร", winningPartyId: "ptp", districtCount: 3, partySeats: { ptp: 3 } },
+  { province: "ชัยภูมิ", winningPartyId: "ptp", districtCount: 6, partySeats: { ptp: 4, bjt: 2 } },
+  { province: "อำนาจเจริญ", winningPartyId: "ptp", districtCount: 2, partySeats: { ptp: 2 } },
+  { province: "หนองคาย", winningPartyId: "ptp", districtCount: 3, partySeats: { ptp: 3 } },
+  { province: "หนองบัวลำภู", winningPartyId: "ptp", districtCount: 3, partySeats: { ptp: 2, bjt: 1 } },
+  { province: "อุดรธานี", winningPartyId: "ptp", districtCount: 9, partySeats: { ptp: 8, pp: 1 } },
+  { province: "เลย", winningPartyId: "ptp", districtCount: 4, partySeats: { ptp: 4 } },
+  { province: "สกลนคร", winningPartyId: "ptp", districtCount: 6, partySeats: { ptp: 5, bjt: 1 } },
+  { province: "นครพนม", winningPartyId: "ptp", districtCount: 4, partySeats: { ptp: 4 } },
+  { province: "มุกดาหาร", winningPartyId: "ptp", districtCount: 2, partySeats: { ptp: 2 } },
+  { province: "กาฬสินธุ์", winningPartyId: "ptp", districtCount: 5, partySeats: { ptp: 4, bjt: 1 } },
+  { province: "ร้อยเอ็ด", winningPartyId: "ptp", districtCount: 7, partySeats: { ptp: 6, bjt: 1 } },
+  { province: "มหาสารคาม", winningPartyId: "ptp", districtCount: 5, partySeats: { ptp: 4, bjt: 1 } },
+  { province: "ขอนแก่น", winningPartyId: "ptp", districtCount: 11, partySeats: { ptp: 8, pp: 2, bjt: 1 } },
+  { province: "บึงกาฬ", winningPartyId: "ptp", districtCount: 2, partySeats: { ptp: 2 } },
+
+  // South Region
+  { province: "ชุมพร", winningPartyId: "dem", districtCount: 3, partySeats: { dem: 2, bjt: 1 } },
+  { province: "สุราษฎร์ธานี", winningPartyId: "dem", districtCount: 6, partySeats: { dem: 4, bjt: 2 } },
+  { province: "นครศรีธรรมราช", winningPartyId: "dem", districtCount: 9, partySeats: { dem: 5, bjt: 3, pp: 1 } },
+  { province: "กระบี่", winningPartyId: "dem", districtCount: 2, partySeats: { dem: 2 } },
+  { province: "พังงา", winningPartyId: "bjt", districtCount: 2, partySeats: { bjt: 1, dem: 1 } },
+  { province: "ภูเก็ต", winningPartyId: "pp", districtCount: 2, partySeats: { pp: 2 } },
+  { province: "สุราษฎร์ธานี", winningPartyId: "dem", districtCount: 6, partySeats: { dem: 4, bjt: 2 } },
+  { province: "ระนอง", winningPartyId: "dem", districtCount: 1, partySeats: { dem: 1 } },
+  { province: "พัทลุง", winningPartyId: "dem", districtCount: 3, partySeats: { dem: 3 } },
+  { province: "ตรัง", winningPartyId: "dem", districtCount: 4, partySeats: { dem: 3, bjt: 1 } },
+  { province: "สตูล", winningPartyId: "dem", districtCount: 2, partySeats: { dem: 2 } },
+  { province: "สงขลา", winningPartyId: "dem", districtCount: 8, partySeats: { dem: 5, bjt: 2, prd: 1 } },
+  { province: "ปัตตานี", winningPartyId: "prd", districtCount: 4, partySeats: { prd: 4 } },
+  { province: "ยะลา", winningPartyId: "prd", districtCount: 3, partySeats: { prd: 3 } },
+  { province: "นราธิวาส", winningPartyId: "prd", districtCount: 4, partySeats: { prd: 3, bjt: 1 } },
+];
+
+// Create lookup map by province name
+export const PROVINCE_PARTY_MAP = new Map<string, ProvincePartyData>(
+  PROVINCE_PARTY_DATA.map(data => [data.province, data])
+);
+
+/**
+ * Get winning party for a province
+ */
+export function getProvinceWinningParty(provinceTh: string): PoliticalParty | undefined {
+  const data = PROVINCE_PARTY_MAP.get(provinceTh);
+  if (!data) return undefined;
+  return PARTY_BY_ID.get(data.winningPartyId);
+}
+
+/**
+ * Get province party data
+ */
+export function getProvincePartyData(provinceTh: string): ProvincePartyData | undefined {
+  return PROVINCE_PARTY_MAP.get(provinceTh);
+}
+
+/**
+ * Get Bangkok district breakdown by party
+ */
+export function getBangkokDistrictsByParty(): { partyId: string; party: PoliticalParty; seats: number }[] {
+  const bkkData = PROVINCE_PARTY_MAP.get("กรุงเทพมหานคร");
+  if (!bkkData) return [];
+
+  return Object.entries(bkkData.partySeats)
+    .map(([partyId, seats]) => ({
+      partyId,
+      party: PARTY_BY_ID.get(partyId)!,
+      seats
+    }))
+    .filter(item => item.party)
+    .sort((a, b) => b.seats - a.seats);
+}
+
+/**
+ * Get party seat summary across all provinces
+ */
+export function getPartySeatSummary(): { partyId: string; party: PoliticalParty; totalSeats: number; provinces: number }[] {
+  const summary = new Map<string, { totalSeats: number; provinces: number }>();
+
+  PROVINCE_PARTY_DATA.forEach(province => {
+    Object.entries(province.partySeats).forEach(([partyId, seats]) => {
+      if (!summary.has(partyId)) {
+        summary.set(partyId, { totalSeats: 0, provinces: 0 });
+      }
+      const data = summary.get(partyId)!;
+      data.totalSeats += seats;
+      data.provinces += 1;
+    });
+  });
+
+  return Array.from(summary.entries())
+    .map(([partyId, data]) => ({
+      partyId,
+      party: PARTY_BY_ID.get(partyId)!,
+      ...data
+    }))
+    .filter(item => item.party)
+    .sort((a, b) => b.totalSeats - a.totalSeats);
+}
