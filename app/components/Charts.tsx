@@ -4,34 +4,25 @@ import {
   PieChart, Pie, Cell, Legend, ComposedChart, Line
 } from 'recharts';
 import { RegionData, DistrictData } from '../types';
+import {
+  aggregateByRegion,
+  getDistrictTurnout,
+  getTurnoutDistribution,
+  getTurnoutColor,
+  formatNumber,
+  formatPercent,
+  CHART_COLORS
+} from '@/lib/provinceMapping';
 
 interface RegionChartProps {
   data: RegionData[];
 }
 
-const COLORS = ['#F87171', '#60A5FA', '#34D399', '#FBBF24', '#818CF8', '#82ca9d'];
-const REGION_NAMES_TH: Record<string, string> = {
-  'Bangkok': 'กรุงเทพฯ',
-  'Central': 'ภาคกลาง',
-  'North': 'ภาคเหนือ',
-  'Northeast': 'ภาคอีสาน',
-  'South': 'ภาคใต้'
-};
-
 export const VotersByRegionPie: React.FC<RegionChartProps> = ({ data }) => {
   const [showActual, setShowActual] = useState(false);
 
   const chartData = useMemo(() => {
-    return data.map(region => {
-      const totalActual = region.districts.reduce((sum, d) => sum + (d.actualVoters || 0), 0);
-      const turnout = region.totalVoters > 0 ? (totalActual / region.totalVoters) * 100 : 0;
-      return {
-        ...region,
-        regionNameTh: REGION_NAMES_TH[region.regionName] || region.regionName,
-        totalActualVoters: totalActual,
-        turnoutPercentage: turnout
-      };
-    });
+    return aggregateByRegion(data);
   }, [data]);
 
   return (
@@ -62,17 +53,17 @@ export const VotersByRegionPie: React.FC<RegionChartProps> = ({ data }) => {
               labelLine={false}
               outerRadius={100}
               fill="#8884d8"
-              dataKey={showActual ? "totalActualVoters" : "totalVoters"}
+              dataKey={showActual ? "totalActual" : "totalEligible"}
               nameKey="regionNameTh"
               label={({ regionNameTh, percent }) => `${regionNameTh} ${(percent * 100).toFixed(0)}%`}
             >
               {chartData.map((entry, index) => (
-                <Cell key={`cell-${entry.regionName}`} fill={COLORS[index % COLORS.length]} />
+                <Cell key={`cell-${entry.region}`} fill={entry.color || CHART_COLORS[index % CHART_COLORS.length]} />
               ))}
             </Pie>
             <Tooltip
               formatter={(value: number, name: string) => [
-                `${value.toLocaleString()} คน`,
+                `${formatNumber(value)} คน`,
                 name
               ]}
             />
@@ -86,17 +77,15 @@ export const VotersByRegionPie: React.FC<RegionChartProps> = ({ data }) => {
 
 export const TurnoutByRegionChart: React.FC<RegionChartProps> = ({ data }) => {
   const chartData = useMemo(() => {
-    return data.map((region, index) => {
-      const totalActual = region.districts.reduce((sum, d) => sum + (d.actualVoters || 0), 0);
-      const turnout = region.totalVoters > 0 ? (totalActual / region.totalVoters) * 100 : 0;
-      return {
-        name: REGION_NAMES_TH[region.regionName] || region.regionName,
-        eligible: region.totalVoters,
-        actual: totalActual,
-        turnout: turnout,
-        fill: COLORS[index % COLORS.length]
-      };
-    }).sort((a, b) => b.turnout - a.turnout);
+    return aggregateByRegion(data)
+      .map(region => ({
+        name: region.regionNameTh,
+        eligible: region.totalEligible,
+        actual: region.totalActual,
+        turnout: region.turnoutPercentage,
+        fill: region.color
+      }))
+      .sort((a, b) => b.turnout - a.turnout);
   }, [data]);
 
   return (
@@ -116,8 +105,8 @@ export const TurnoutByRegionChart: React.FC<RegionChartProps> = ({ data }) => {
             <YAxis type="category" dataKey="name" tick={{ fontSize: 12 }} width={80} />
             <Tooltip
               formatter={(value: number, name: string) => {
-                if (name === 'turnout') return [`${value.toFixed(2)}%`, 'อัตราการมาใช้สิทธิ'];
-                return [value.toLocaleString(), name === 'eligible' ? 'ผู้มีสิทธิ' : 'มาใช้สิทธิ'];
+                if (name === 'turnout') return [formatPercent(value), 'อัตราการมาใช้สิทธิ'];
+                return [formatNumber(value), name === 'eligible' ? 'ผู้มีสิทธิ' : 'มาใช้สิทธิ'];
               }}
               contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)' }}
             />
@@ -125,7 +114,7 @@ export const TurnoutByRegionChart: React.FC<RegionChartProps> = ({ data }) => {
               {chartData.map((entry, index) => (
                 <Cell
                   key={`cell-${index}`}
-                  fill={entry.turnout >= 75 ? '#10B981' : entry.turnout >= 70 ? '#F59E0B' : '#EF4444'}
+                  fill={getTurnoutColor(entry.turnout)}
                 />
               ))}
             </Bar>
@@ -152,7 +141,7 @@ export const TopDistrictsBar: React.FC<DistrictRankChartProps> = ({ data }) => {
   const chartData = useMemo(() => {
     const withTurnout = data.map(d => ({
       ...d,
-      turnout: d.actualVoters && d.voterCount ? (d.actualVoters / d.voterCount) * 100 : 0
+      turnout: getDistrictTurnout(d)
     }));
 
     if (sortByTurnout) {
@@ -201,9 +190,9 @@ export const TopDistrictsBar: React.FC<DistrictRankChartProps> = ({ data }) => {
             />
             <Tooltip
               formatter={(value: number, name: string) => {
-                if (name === 'turnout') return [`${value.toFixed(2)}%`, 'อัตราการมาใช้สิทธิ'];
-                if (name === 'voterCount') return [`${value.toLocaleString()} คน`, 'ผู้มีสิทธิ'];
-                if (name === 'actualVoters') return [`${value.toLocaleString()} คน`, 'มาใช้สิทธิ'];
+                if (name === 'turnout') return [formatPercent(value), 'อัตราการมาใช้สิทธิ'];
+                if (name === 'voterCount') return [`${formatNumber(value)} คน`, 'ผู้มีสิทธิ'];
+                if (name === 'actualVoters') return [`${formatNumber(value)} คน`, 'มาใช้สิทธิ'];
                 return [value, name];
               }}
               contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)' }}
@@ -213,7 +202,7 @@ export const TopDistrictsBar: React.FC<DistrictRankChartProps> = ({ data }) => {
                 {chartData.map((entry, index) => (
                   <Cell
                     key={`cell-${index}`}
-                    fill={entry.turnout >= 80 ? '#059669' : entry.turnout >= 75 ? '#3B82F6' : entry.turnout >= 70 ? '#F59E0B' : '#EF4444'}
+                    fill={getTurnoutColor(entry.turnout)}
                   />
                 ))}
               </Bar>
@@ -229,26 +218,7 @@ export const TopDistrictsBar: React.FC<DistrictRankChartProps> = ({ data }) => {
 
 export const DistrictTurnoutDistribution: React.FC<DistrictRankChartProps> = ({ data }) => {
   const distributionData = useMemo(() => {
-    const ranges = [
-      { label: '80%+', min: 80, max: 100, color: '#059669' },
-      { label: '75-79%', min: 75, max: 80, color: '#3B82F6' },
-      { label: '70-74%', min: 70, max: 75, color: '#F59E0B' },
-      { label: 'ต่ำกว่า 70%', min: 0, max: 70, color: '#EF4444' }
-    ];
-
-    return ranges.map(range => {
-      const count = data.filter(d => {
-        const turnout = d.actualVoters && d.voterCount ? (d.actualVoters / d.voterCount) * 100 : 0;
-        return turnout >= range.min && turnout < range.max;
-      }).length;
-
-      return {
-        name: range.label,
-        count,
-        fill: range.color,
-        percentage: data.length > 0 ? (count / data.length) * 100 : 0
-      };
-    });
+    return getTurnoutDistribution(data);
   }, [data]);
 
   return (
@@ -263,7 +233,7 @@ export const DistrictTurnoutDistribution: React.FC<DistrictRankChartProps> = ({ 
             margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
           >
             <CartesianGrid strokeDasharray="3 3" vertical={false} />
-            <XAxis dataKey="name" tick={{ fontSize: 12 }} />
+            <XAxis dataKey="labelTh" tick={{ fontSize: 12 }} />
             <YAxis tick={{ fontSize: 12 }} />
             <Tooltip
               formatter={(value: number, name: string) => {
@@ -274,7 +244,7 @@ export const DistrictTurnoutDistribution: React.FC<DistrictRankChartProps> = ({ 
             />
             <Bar dataKey="count" radius={[4, 4, 0, 0]} barSize={50}>
               {distributionData.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={entry.fill} />
+                <Cell key={`cell-${index}`} fill={entry.color} />
               ))}
             </Bar>
           </BarChart>
