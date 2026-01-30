@@ -1,0 +1,3242 @@
+{
+  "totalEligibleVoters": 52195920,
+  "totalActualVoters": 39514939,
+  "lastUpdated": "2026-01-30T08:33:33.561Z",
+  "regions": [
+    {
+      "regionName": "Bangkok",
+      "totalVoters": 4461071,
+      "totalActualVoters": 3312913,
+      "districts": [
+        {
+          "name": "กรุงเทพมหานคร เขต 1",
+          "province": "กรุงเทพมหานคร",
+          "voterCount": 137554,
+          "actualVoters": 94406,
+          "invalidVotes": 1259,
+          "noVotes": 3056
+        },
+        {
+          "name": "กรุงเทพมหานคร เขต 2",
+          "province": "กรุงเทพมหานคร",
+          "voterCount": 140733,
+          "actualVoters": 96992,
+          "invalidVotes": 1368,
+          "noVotes": 3426
+        },
+        {
+          "name": "กรุงเทพมหานคร เขต 3",
+          "province": "กรุงเทพมหานคร",
+          "voterCount": 125476,
+          "actualVoters": 88098,
+          "invalidVotes": 1130,
+          "noVotes": 2685
+        },
+        {
+          "name": "กรุงเทพมหานคร เขต 4",
+          "province": "กรุงเทพมหานคร",
+          "voterCount": 130260,
+          "actualVoters": 89245,
+          "invalidVotes": 1392,
+          "noVotes": 2485
+        },
+        {
+          "name": "กรุงเทพมหานคร เขต 5",
+          "province": "กรุงเทพมหานคร",
+          "voterCount": 132454,
+          "actualVoters": 99240,
+          "invalidVotes": 1218,
+          "noVotes": 2944
+        },
+        {
+          "name": "กรุงเทพมหานคร เขต 6",
+          "province": "กรุงเทพมหานคร",
+          "voterCount": 145675,
+          "actualVoters": 108113,
+          "invalidVotes": 1444,
+          "noVotes": 3355
+        },
+        {
+          "name": "กรุงเทพมหานคร เขต 7",
+          "province": "กรุงเทพมหานคร",
+          "voterCount": 142086,
+          "actualVoters": 99645,
+          "invalidVotes": 1294,
+          "noVotes": 3375
+        },
+        {
+          "name": "กรุงเทพมหานคร เขต 8",
+          "province": "กรุงเทพมหานคร",
+          "voterCount": 142174,
+          "actualVoters": 108227,
+          "invalidVotes": 1040,
+          "noVotes": 3638
+        },
+        {
+          "name": "กรุงเทพมหานคร เขต 9",
+          "province": "กรุงเทพมหานคร",
+          "voterCount": 146096,
+          "actualVoters": 107795,
+          "invalidVotes": 1925,
+          "noVotes": 3949
+        },
+        {
+          "name": "กรุงเทพมหานคร เขต 10",
+          "province": "กรุงเทพมหานคร",
+          "voterCount": 137039,
+          "actualVoters": 104102,
+          "invalidVotes": 1373,
+          "noVotes": 2993
+        },
+        {
+          "name": "กรุงเทพมหานคร เขต 11",
+          "province": "กรุงเทพมหานคร",
+          "voterCount": 134134,
+          "actualVoters": 102613,
+          "invalidVotes": 1276,
+          "noVotes": 2221
+        },
+        {
+          "name": "กรุงเทพมหานคร เขต 12",
+          "province": "กรุงเทพมหานคร",
+          "voterCount": 138408,
+          "actualVoters": 106410,
+          "invalidVotes": 1187,
+          "noVotes": 3248
+        },
+        {
+          "name": "กรุงเทพมหานคร เขต 13",
+          "province": "กรุงเทพมหานคร",
+          "voterCount": 132486,
+          "actualVoters": 100382,
+          "invalidVotes": 1032,
+          "noVotes": 3101
+        },
+        {
+          "name": "กรุงเทพมหานคร เขต 14",
+          "province": "กรุงเทพมหานคร",
+          "voterCount": 139036,
+          "actualVoters": 101871,
+          "invalidVotes": 1193,
+          "noVotes": 2787
+        },
+        {
+          "name": "กรุงเทพมหานคร เขต 15",
+          "province": "กรุงเทพมหานคร",
+          "voterCount": 127334,
+          "actualVoters": 95935,
+          "invalidVotes": 1178,
+          "noVotes": 2585
+        },
+        {
+          "name": "กรุงเทพมหานคร เขต 16",
+          "province": "กรุงเทพมหานคร",
+          "voterCount": 131399,
+          "actualVoters": 101785,
+          "invalidVotes": 1309,
+          "noVotes": 2724
+        },
+        {
+          "name": "กรุงเทพมหานคร เขต 17",
+          "province": "กรุงเทพมหานคร",
+          "voterCount": 114018,
+          "actualVoters": 85830,
+          "invalidVotes": 1735,
+          "noVotes": 2197
+        },
+        {
+          "name": "กรุงเทพมหานคร เขต 18",
+          "province": "กรุงเทพมหานคร",
+          "voterCount": 116769,
+          "actualVoters": 89624,
+          "invalidVotes": 1967,
+          "noVotes": 2587
+        },
+        {
+          "name": "กรุงเทพมหานคร เขต 19",
+          "province": "กรุงเทพมหานคร",
+          "voterCount": 131753,
+          "actualVoters": 101228,
+          "invalidVotes": 1292,
+          "noVotes": 3401
+        },
+        {
+          "name": "กรุงเทพมหานคร เขต 20",
+          "province": "กรุงเทพมหานคร",
+          "voterCount": 122467,
+          "actualVoters": 90262,
+          "invalidVotes": 1680,
+          "noVotes": 2490
+        },
+        {
+          "name": "กรุงเทพมหานคร เขต 21",
+          "province": "กรุงเทพมหานคร",
+          "voterCount": 131750,
+          "actualVoters": 99180,
+          "invalidVotes": 1314,
+          "noVotes": 2325
+        },
+        {
+          "name": "กรุงเทพมหานคร เขต 22",
+          "province": "กรุงเทพมหานคร",
+          "voterCount": 130951,
+          "actualVoters": 97065,
+          "invalidVotes": 1268,
+          "noVotes": 3145
+        },
+        {
+          "name": "กรุงเทพมหานคร เขต 23",
+          "province": "กรุงเทพมหานคร",
+          "voterCount": 145165,
+          "actualVoters": 105969,
+          "invalidVotes": 1265,
+          "noVotes": 3361
+        },
+        {
+          "name": "กรุงเทพมหานคร เขต 24",
+          "province": "กรุงเทพมหานคร",
+          "voterCount": 142622,
+          "actualVoters": 103082,
+          "invalidVotes": 1615,
+          "noVotes": 3649
+        },
+        {
+          "name": "กรุงเทพมหานคร เขต 25",
+          "province": "กรุงเทพมหานคร",
+          "voterCount": 125512,
+          "actualVoters": 92942,
+          "invalidVotes": 1313,
+          "noVotes": 2760
+        },
+        {
+          "name": "กรุงเทพมหานคร เขต 26",
+          "province": "กรุงเทพมหานคร",
+          "voterCount": 135371,
+          "actualVoters": 101311,
+          "invalidVotes": 1944,
+          "noVotes": 2659
+        },
+        {
+          "name": "กรุงเทพมหานคร เขต 27",
+          "province": "กรุงเทพมหานคร",
+          "voterCount": 129232,
+          "actualVoters": 101144,
+          "invalidVotes": 1472,
+          "noVotes": 1919
+        },
+        {
+          "name": "กรุงเทพมหานคร เขต 28",
+          "province": "กรุงเทพมหานคร",
+          "voterCount": 136636,
+          "actualVoters": 105489,
+          "invalidVotes": 1836,
+          "noVotes": 2408
+        },
+        {
+          "name": "กรุงเทพมหานคร เขต 29",
+          "province": "กรุงเทพมหานคร",
+          "voterCount": 143349,
+          "actualVoters": 108687,
+          "invalidVotes": 2089,
+          "noVotes": 3037
+        },
+        {
+          "name": "กรุงเทพมหานคร เขต 30",
+          "province": "กรุงเทพมหานคร",
+          "voterCount": 140015,
+          "actualVoters": 104742,
+          "invalidVotes": 1724,
+          "noVotes": 3230
+        },
+        {
+          "name": "กรุงเทพมหานคร เขต 31",
+          "province": "กรุงเทพมหานคร",
+          "voterCount": 141699,
+          "actualVoters": 110632,
+          "invalidVotes": 1615,
+          "noVotes": 3708
+        },
+        {
+          "name": "กรุงเทพมหานคร เขต 32",
+          "province": "กรุงเทพมหานคร",
+          "voterCount": 142597,
+          "actualVoters": 101615,
+          "invalidVotes": 1772,
+          "noVotes": 3441
+        },
+        {
+          "name": "กรุงเทพมหานคร เขต 33",
+          "province": "กรุงเทพมหานคร",
+          "voterCount": 148821,
+          "actualVoters": 109252,
+          "invalidVotes": 1811,
+          "noVotes": 3210
+        }
+      ]
+    },
+    {
+      "regionName": "Central",
+      "totalVoters": 13740651,
+      "totalActualVoters": 10911736,
+      "districts": [
+        {
+          "name": "กาญจนบุรี เขต 1",
+          "province": "กาญจนบุรี",
+          "voterCount": 132469,
+          "actualVoters": 105722,
+          "invalidVotes": 3975,
+          "noVotes": 3124
+        },
+        {
+          "name": "กาญจนบุรี เขต 2",
+          "province": "กาญจนบุรี",
+          "voterCount": 129827,
+          "actualVoters": 107722,
+          "invalidVotes": 3779,
+          "noVotes": 1515
+        },
+        {
+          "name": "กาญจนบุรี เขต 3",
+          "province": "กาญจนบุรี",
+          "voterCount": 134560,
+          "actualVoters": 113156,
+          "invalidVotes": 4121,
+          "noVotes": 1609
+        },
+        {
+          "name": "กาญจนบุรี เขต 4",
+          "province": "กาญจนบุรี",
+          "voterCount": 130701,
+          "actualVoters": 103157,
+          "invalidVotes": 5799,
+          "noVotes": 1102
+        },
+        {
+          "name": "กาญจนบุรี เขต 5",
+          "province": "กาญจนบุรี",
+          "voterCount": 118524,
+          "actualVoters": 87805,
+          "invalidVotes": 4652,
+          "noVotes": 1316
+        },
+        {
+          "name": "จันทบุรี เขต 1",
+          "province": "จันทบุรี",
+          "voterCount": 146141,
+          "actualVoters": 114253,
+          "invalidVotes": 3269,
+          "noVotes": 3111
+        },
+        {
+          "name": "จันทบุรี เขต 2",
+          "province": "จันทบุรี",
+          "voterCount": 140889,
+          "actualVoters": 107992,
+          "invalidVotes": 5497,
+          "noVotes": 3231
+        },
+        {
+          "name": "จันทบุรี เขต 3",
+          "province": "จันทบุรี",
+          "voterCount": 140887,
+          "actualVoters": 106198,
+          "invalidVotes": 5017,
+          "noVotes": 2558
+        },
+        {
+          "name": "ฉะเชิงเทรา เขต 1",
+          "province": "ฉะเชิงเทรา",
+          "voterCount": 143562,
+          "actualVoters": 122124,
+          "invalidVotes": 3088,
+          "noVotes": 2500
+        },
+        {
+          "name": "ฉะเชิงเทรา เขต 2",
+          "province": "ฉะเชิงเทรา",
+          "voterCount": 142721,
+          "actualVoters": 119211,
+          "invalidVotes": 4644,
+          "noVotes": 2434
+        },
+        {
+          "name": "ฉะเชิงเทรา เขต 3",
+          "province": "ฉะเชิงเทรา",
+          "voterCount": 144787,
+          "actualVoters": 113283,
+          "invalidVotes": 6069,
+          "noVotes": 1591
+        },
+        {
+          "name": "ฉะเชิงเทรา เขต 4",
+          "province": "ฉะเชิงเทรา",
+          "voterCount": 144726,
+          "actualVoters": 122385,
+          "invalidVotes": 4166,
+          "noVotes": 1873
+        },
+        {
+          "name": "ชลบุรี เขต 1",
+          "province": "ชลบุรี",
+          "voterCount": 127261,
+          "actualVoters": 104984,
+          "invalidVotes": 2347,
+          "noVotes": 2592
+        },
+        {
+          "name": "ชลบุรี เขต 2",
+          "province": "ชลบุรี",
+          "voterCount": 111805,
+          "actualVoters": 88518,
+          "invalidVotes": 1738,
+          "noVotes": 1905
+        },
+        {
+          "name": "ชลบุรี เขต 3",
+          "province": "ชลบุรี",
+          "voterCount": 116766,
+          "actualVoters": 98964,
+          "invalidVotes": 2511,
+          "noVotes": 1754
+        },
+        {
+          "name": "ชลบุรี เขต 4",
+          "province": "ชลบุรี",
+          "voterCount": 117288,
+          "actualVoters": 94166,
+          "invalidVotes": 4375,
+          "noVotes": 1435
+        },
+        {
+          "name": "ชลบุรี เขต 5",
+          "province": "ชลบุรี",
+          "voterCount": 131393,
+          "actualVoters": 111292,
+          "invalidVotes": 4167,
+          "noVotes": 1850
+        },
+        {
+          "name": "ชลบุรี เขต 6",
+          "province": "ชลบุรี",
+          "voterCount": 132344,
+          "actualVoters": 101948,
+          "invalidVotes": 2317,
+          "noVotes": 2053
+        },
+        {
+          "name": "ชลบุรี เขต 7",
+          "province": "ชลบุรี",
+          "voterCount": 118413,
+          "actualVoters": 92544,
+          "invalidVotes": 1694,
+          "noVotes": 1823
+        },
+        {
+          "name": "ชลบุรี เขต 8",
+          "province": "ชลบุรี",
+          "voterCount": 130136,
+          "actualVoters": 97204,
+          "invalidVotes": 3078,
+          "noVotes": 2192
+        },
+        {
+          "name": "ชลบุรี เขต 9",
+          "province": "ชลบุรี",
+          "voterCount": 115650,
+          "actualVoters": 76391,
+          "invalidVotes": 2036,
+          "noVotes": 1515
+        },
+        {
+          "name": "ชลบุรี เขต 10",
+          "province": "ชลบุรี",
+          "voterCount": 131994,
+          "actualVoters": 93252,
+          "invalidVotes": 2234,
+          "noVotes": 3057
+        },
+        {
+          "name": "ชัยนาท เขต 1",
+          "province": "ชัยนาท",
+          "voterCount": 131511,
+          "actualVoters": 102135,
+          "invalidVotes": 4652,
+          "noVotes": 2495
+        },
+        {
+          "name": "ชัยนาท เขต 2",
+          "province": "ชัยนาท",
+          "voterCount": 130811,
+          "actualVoters": 103343,
+          "invalidVotes": 5693,
+          "noVotes": 1608
+        },
+        {
+          "name": "ตราด เขต 1",
+          "province": "ตราด",
+          "voterCount": 175112,
+          "actualVoters": 129680,
+          "invalidVotes": 5972,
+          "noVotes": 2626
+        },
+        {
+          "name": "นครนายก เขต 1",
+          "province": "นครนายก",
+          "voterCount": 102841,
+          "actualVoters": 84635,
+          "invalidVotes": 2988,
+          "noVotes": 1862
+        },
+        {
+          "name": "นครนายก เขต 2",
+          "province": "นครนายก",
+          "voterCount": 107118,
+          "actualVoters": 88973,
+          "invalidVotes": 3242,
+          "noVotes": 1608
+        },
+        {
+          "name": "นครปฐม เขต 1",
+          "province": "นครปฐม",
+          "voterCount": 126378,
+          "actualVoters": 107368,
+          "invalidVotes": 2999,
+          "noVotes": 2153
+        },
+        {
+          "name": "นครปฐม เขต 2",
+          "province": "นครปฐม",
+          "voterCount": 120391,
+          "actualVoters": 99830,
+          "invalidVotes": 2898,
+          "noVotes": 3241
+        },
+        {
+          "name": "นครปฐม เขต 3",
+          "province": "นครปฐม",
+          "voterCount": 117980,
+          "actualVoters": 97261,
+          "invalidVotes": 3871,
+          "noVotes": 2430
+        },
+        {
+          "name": "นครปฐม เขต 4",
+          "province": "นครปฐม",
+          "voterCount": 126185,
+          "actualVoters": 107157,
+          "invalidVotes": 3838,
+          "noVotes": 1628
+        },
+        {
+          "name": "นครปฐม เขต 5",
+          "province": "นครปฐม",
+          "voterCount": 127644,
+          "actualVoters": 108608,
+          "invalidVotes": 3573,
+          "noVotes": 2562
+        },
+        {
+          "name": "นครปฐม เขต 6",
+          "province": "นครปฐม",
+          "voterCount": 121137,
+          "actualVoters": 97550,
+          "invalidVotes": 2348,
+          "noVotes": 3008
+        },
+        {
+          "name": "นนทบุรี เขต 1",
+          "province": "นนทบุรี",
+          "voterCount": 139714,
+          "actualVoters": 107099,
+          "invalidVotes": 2296,
+          "noVotes": 4105
+        },
+        {
+          "name": "นนทบุรี เขต 2",
+          "province": "นนทบุรี",
+          "voterCount": 123668,
+          "actualVoters": 95416,
+          "invalidVotes": 2022,
+          "noVotes": 3388
+        },
+        {
+          "name": "นนทบุรี เขต 3",
+          "province": "นนทบุรี",
+          "voterCount": 133307,
+          "actualVoters": 106507,
+          "invalidVotes": 2004,
+          "noVotes": 4193
+        },
+        {
+          "name": "นนทบุรี เขต 4",
+          "province": "นนทบุรี",
+          "voterCount": 126831,
+          "actualVoters": 96342,
+          "invalidVotes": 1571,
+          "noVotes": 3454
+        },
+        {
+          "name": "นนทบุรี เขต 5",
+          "province": "นนทบุรี",
+          "voterCount": 130916,
+          "actualVoters": 101916,
+          "invalidVotes": 2953,
+          "noVotes": 4570
+        },
+        {
+          "name": "นนทบุรี เขต 6",
+          "province": "นนทบุรี",
+          "voterCount": 135099,
+          "actualVoters": 107193,
+          "invalidVotes": 2252,
+          "noVotes": 3983
+        },
+        {
+          "name": "นนทบุรี เขต 7",
+          "province": "นนทบุรี",
+          "voterCount": 134546,
+          "actualVoters": 105655,
+          "invalidVotes": 2356,
+          "noVotes": 3354
+        },
+        {
+          "name": "นนทบุรี เขต 8",
+          "province": "นนทบุรี",
+          "voterCount": 132133,
+          "actualVoters": 103196,
+          "invalidVotes": 3080,
+          "noVotes": 3895
+        },
+        {
+          "name": "ปทุมธานี เขต 1",
+          "province": "ปทุมธานี",
+          "voterCount": 131304,
+          "actualVoters": 109016,
+          "invalidVotes": 3056,
+          "noVotes": 2497
+        },
+        {
+          "name": "ปทุมธานี เขต 2",
+          "province": "ปทุมธานี",
+          "voterCount": 139489,
+          "actualVoters": 108556,
+          "invalidVotes": 2430,
+          "noVotes": 3782
+        },
+        {
+          "name": "ปทุมธานี เขต 3",
+          "province": "ปทุมธานี",
+          "voterCount": 126247,
+          "actualVoters": 99770,
+          "invalidVotes": 1838,
+          "noVotes": 2644
+        },
+        {
+          "name": "ปทุมธานี เขต 4",
+          "province": "ปทุมธานี",
+          "voterCount": 133040,
+          "actualVoters": 106181,
+          "invalidVotes": 2219,
+          "noVotes": 3091
+        },
+        {
+          "name": "ปทุมธานี เขต 5",
+          "province": "ปทุมธานี",
+          "voterCount": 143080,
+          "actualVoters": 115676,
+          "invalidVotes": 2500,
+          "noVotes": 2853
+        },
+        {
+          "name": "ปทุมธานี เขต 6",
+          "province": "ปทุมธานี",
+          "voterCount": 147030,
+          "actualVoters": 112943,
+          "invalidVotes": 1762,
+          "noVotes": 3410
+        },
+        {
+          "name": "ปทุมธานี เขต 7",
+          "province": "ปทุมธานี",
+          "voterCount": 142701,
+          "actualVoters": 112659,
+          "invalidVotes": 2665,
+          "noVotes": 2651
+        },
+        {
+          "name": "ประจวบคีรีขันธ์ เขต 1",
+          "province": "ประจวบคีรีขันธ์",
+          "voterCount": 150346,
+          "actualVoters": 114565,
+          "invalidVotes": 4436,
+          "noVotes": 2244
+        },
+        {
+          "name": "ประจวบคีรีขันธ์ เขต 2",
+          "province": "ประจวบคีรีขันธ์",
+          "voterCount": 143310,
+          "actualVoters": 110411,
+          "invalidVotes": 3757,
+          "noVotes": 2461
+        },
+        {
+          "name": "ประจวบคีรีขันธ์ เขต 3",
+          "province": "ประจวบคีรีขันธ์",
+          "voterCount": 137088,
+          "actualVoters": 103476,
+          "invalidVotes": 4221,
+          "noVotes": 2139
+        },
+        {
+          "name": "ปราจีนบุรี เขต 1",
+          "province": "ปราจีนบุรี",
+          "voterCount": 129146,
+          "actualVoters": 102871,
+          "invalidVotes": 4044,
+          "noVotes": 3362
+        },
+        {
+          "name": "ปราจีนบุรี เขต 2",
+          "province": "ปราจีนบุรี",
+          "voterCount": 136175,
+          "actualVoters": 110472,
+          "invalidVotes": 4197,
+          "noVotes": 1967
+        },
+        {
+          "name": "ปราจีนบุรี เขต 3",
+          "province": "ปราจีนบุรี",
+          "voterCount": 129339,
+          "actualVoters": 101602,
+          "invalidVotes": 4737,
+          "noVotes": 1899
+        },
+        {
+          "name": "พระนครศรีอยุธยา เขต 1",
+          "province": "พระนครศรีอยุธยา",
+          "voterCount": 138032,
+          "actualVoters": 110317,
+          "invalidVotes": 3578,
+          "noVotes": 3918
+        },
+        {
+          "name": "พระนครศรีอยุธยา เขต 2",
+          "province": "พระนครศรีอยุธยา",
+          "voterCount": 127839,
+          "actualVoters": 106945,
+          "invalidVotes": 4330,
+          "noVotes": 2389
+        },
+        {
+          "name": "พระนครศรีอยุธยา เขต 3",
+          "province": "พระนครศรีอยุธยา",
+          "voterCount": 130769,
+          "actualVoters": 107898,
+          "invalidVotes": 3296,
+          "noVotes": 1929
+        },
+        {
+          "name": "พระนครศรีอยุธยา เขต 4",
+          "province": "พระนครศรีอยุธยา",
+          "voterCount": 134330,
+          "actualVoters": 113956,
+          "invalidVotes": 2901,
+          "noVotes": 1947
+        },
+        {
+          "name": "พระนครศรีอยุธยา เขต 5",
+          "province": "พระนครศรีอยุธยา",
+          "voterCount": 132850,
+          "actualVoters": 107231,
+          "invalidVotes": 3775,
+          "noVotes": 1944
+        },
+        {
+          "name": "เพชรบุรี เขต 1",
+          "province": "เพชรบุรี",
+          "voterCount": 123794,
+          "actualVoters": 104809,
+          "invalidVotes": 3143,
+          "noVotes": 2014
+        },
+        {
+          "name": "เพชรบุรี เขต 2",
+          "province": "เพชรบุรี",
+          "voterCount": 135328,
+          "actualVoters": 113627,
+          "invalidVotes": 4093,
+          "noVotes": 1680
+        },
+        {
+          "name": "เพชรบุรี เขต 3",
+          "province": "เพชรบุรี",
+          "voterCount": 129638,
+          "actualVoters": 110142,
+          "invalidVotes": 4104,
+          "noVotes": 1900
+        },
+        {
+          "name": "ระยอง เขต 1",
+          "province": "ระยอง",
+          "voterCount": 113425,
+          "actualVoters": 92474,
+          "invalidVotes": 1888,
+          "noVotes": 2304
+        },
+        {
+          "name": "ระยอง เขต 2",
+          "province": "ระยอง",
+          "voterCount": 114586,
+          "actualVoters": 84238,
+          "invalidVotes": 2462,
+          "noVotes": 2495
+        },
+        {
+          "name": "ระยอง เขต 3",
+          "province": "ระยอง",
+          "voterCount": 122663,
+          "actualVoters": 95520,
+          "invalidVotes": 3753,
+          "noVotes": 2297
+        },
+        {
+          "name": "ระยอง เขต 4",
+          "province": "ระยอง",
+          "voterCount": 120353,
+          "actualVoters": 91834,
+          "invalidVotes": 3206,
+          "noVotes": 2349
+        },
+        {
+          "name": "ระยอง เขต 5",
+          "province": "ระยอง",
+          "voterCount": 116640,
+          "actualVoters": 90537,
+          "invalidVotes": 2508,
+          "noVotes": 1939
+        },
+        {
+          "name": "ราชบุรี เขต 1",
+          "province": "ราชบุรี",
+          "voterCount": 138676,
+          "actualVoters": 109540,
+          "invalidVotes": 3645,
+          "noVotes": 3960
+        },
+        {
+          "name": "ราชบุรี เขต 2",
+          "province": "ราชบุรี",
+          "voterCount": 133053,
+          "actualVoters": 105493,
+          "invalidVotes": 5549,
+          "noVotes": 3951
+        },
+        {
+          "name": "ราชบุรี เขต 3",
+          "province": "ราชบุรี",
+          "voterCount": 138855,
+          "actualVoters": 119245,
+          "invalidVotes": 4598,
+          "noVotes": 2428
+        },
+        {
+          "name": "ราชบุรี เขต 4",
+          "province": "ราชบุรี",
+          "voterCount": 138957,
+          "actualVoters": 116293,
+          "invalidVotes": 3785,
+          "noVotes": 1605
+        },
+        {
+          "name": "ราชบุรี เขต 5",
+          "province": "ราชบุรี",
+          "voterCount": 132930,
+          "actualVoters": 114793,
+          "invalidVotes": 3292,
+          "noVotes": 1496
+        },
+        {
+          "name": "ลพบุรี เขต 1",
+          "province": "ลพบุรี",
+          "voterCount": 118800,
+          "actualVoters": 93794,
+          "invalidVotes": 2730,
+          "noVotes": 3938
+        },
+        {
+          "name": "ลพบุรี เขต 2",
+          "province": "ลพบุรี",
+          "voterCount": 122526,
+          "actualVoters": 95559,
+          "invalidVotes": 4606,
+          "noVotes": 3031
+        },
+        {
+          "name": "ลพบุรี เขต 3",
+          "province": "ลพบุรี",
+          "voterCount": 122543,
+          "actualVoters": 97574,
+          "invalidVotes": 4279,
+          "noVotes": 1997
+        },
+        {
+          "name": "ลพบุรี เขต 4",
+          "province": "ลพบุรี",
+          "voterCount": 118249,
+          "actualVoters": 89787,
+          "invalidVotes": 4912,
+          "noVotes": 1682
+        },
+        {
+          "name": "ลพบุรี เขต 5",
+          "province": "ลพบุรี",
+          "voterCount": 116073,
+          "actualVoters": 90240,
+          "invalidVotes": 3799,
+          "noVotes": 953
+        },
+        {
+          "name": "สมุทรปราการ เขต 1",
+          "province": "สมุทรปราการ",
+          "voterCount": 127532,
+          "actualVoters": 100175,
+          "invalidVotes": 2421,
+          "noVotes": 2644
+        },
+        {
+          "name": "สมุทรปราการ เขต 2",
+          "province": "สมุทรปราการ",
+          "voterCount": 125227,
+          "actualVoters": 99349,
+          "invalidVotes": 2302,
+          "noVotes": 2121
+        },
+        {
+          "name": "สมุทรปราการ เขต 3",
+          "province": "สมุทรปราการ",
+          "voterCount": 141111,
+          "actualVoters": 106238,
+          "invalidVotes": 2186,
+          "noVotes": 2944
+        },
+        {
+          "name": "สมุทรปราการ เขต 4",
+          "province": "สมุทรปราการ",
+          "voterCount": 126803,
+          "actualVoters": 101810,
+          "invalidVotes": 1840,
+          "noVotes": 3270
+        },
+        {
+          "name": "สมุทรปราการ เขต 5",
+          "province": "สมุทรปราการ",
+          "voterCount": 151316,
+          "actualVoters": 119975,
+          "invalidVotes": 2338,
+          "noVotes": 3251
+        },
+        {
+          "name": "สมุทรปราการ เขต 6",
+          "province": "สมุทรปราการ",
+          "voterCount": 132580,
+          "actualVoters": 102544,
+          "invalidVotes": 3156,
+          "noVotes": 2716
+        },
+        {
+          "name": "สมุทรปราการ เขต 7",
+          "province": "สมุทรปราการ",
+          "voterCount": 139854,
+          "actualVoters": 113796,
+          "invalidVotes": 2643,
+          "noVotes": 1921
+        },
+        {
+          "name": "สมุทรปราการ เขต 8",
+          "province": "สมุทรปราการ",
+          "voterCount": 144807,
+          "actualVoters": 113255,
+          "invalidVotes": 3136,
+          "noVotes": 2608
+        },
+        {
+          "name": "สมุทรสงคราม เขต 1",
+          "province": "สมุทรสงคราม",
+          "voterCount": 156024,
+          "actualVoters": 120853,
+          "invalidVotes": 4302,
+          "noVotes": 2977
+        },
+        {
+          "name": "สมุทรสาคร เขต 1",
+          "province": "สมุทรสาคร",
+          "voterCount": 151099,
+          "actualVoters": 117455,
+          "invalidVotes": 3292,
+          "noVotes": 3294
+        },
+        {
+          "name": "สมุทรสาคร เขต 2",
+          "province": "สมุทรสาคร",
+          "voterCount": 145061,
+          "actualVoters": 112852,
+          "invalidVotes": 2973,
+          "noVotes": 2883
+        },
+        {
+          "name": "สมุทรสาคร เขต 3",
+          "province": "สมุทรสาคร",
+          "voterCount": 150251,
+          "actualVoters": 119698,
+          "invalidVotes": 4301,
+          "noVotes": 2771
+        },
+        {
+          "name": "สระแก้ว เขต 1",
+          "province": "สระแก้ว",
+          "voterCount": 145448,
+          "actualVoters": 107882,
+          "invalidVotes": 5036,
+          "noVotes": 1623
+        },
+        {
+          "name": "สระแก้ว เขต 2",
+          "province": "สระแก้ว",
+          "voterCount": 143259,
+          "actualVoters": 103004,
+          "invalidVotes": 3844,
+          "noVotes": 1590
+        },
+        {
+          "name": "สระแก้ว เขต 3",
+          "province": "สระแก้ว",
+          "voterCount": 148906,
+          "actualVoters": 110159,
+          "invalidVotes": 4988,
+          "noVotes": 1745
+        },
+        {
+          "name": "สระบุรี เขต 1",
+          "province": "สระบุรี",
+          "voterCount": 126173,
+          "actualVoters": 103684,
+          "invalidVotes": 3696,
+          "noVotes": 3316
+        },
+        {
+          "name": "สระบุรี เขต 2",
+          "province": "สระบุรี",
+          "voterCount": 133203,
+          "actualVoters": 109753,
+          "invalidVotes": 4939,
+          "noVotes": 2080
+        },
+        {
+          "name": "สระบุรี เขต 3",
+          "province": "สระบุรี",
+          "voterCount": 123399,
+          "actualVoters": 103466,
+          "invalidVotes": 3900,
+          "noVotes": 1818
+        },
+        {
+          "name": "สระบุรี เขต 4",
+          "province": "สระบุรี",
+          "voterCount": 126633,
+          "actualVoters": 103760,
+          "invalidVotes": 4189,
+          "noVotes": 2754
+        },
+        {
+          "name": "สิงห์บุรี เขต 1",
+          "province": "สิงห์บุรี",
+          "voterCount": 168062,
+          "actualVoters": 131501,
+          "invalidVotes": 6084,
+          "noVotes": 3939
+        },
+        {
+          "name": "สุพรรณบุรี เขต 1",
+          "province": "สุพรรณบุรี",
+          "voterCount": 134390,
+          "actualVoters": 101837,
+          "invalidVotes": 7032,
+          "noVotes": 3054
+        },
+        {
+          "name": "สุพรรณบุรี เขต 2",
+          "province": "สุพรรณบุรี",
+          "voterCount": 129478,
+          "actualVoters": 97621,
+          "invalidVotes": 6228,
+          "noVotes": 1707
+        },
+        {
+          "name": "สุพรรณบุรี เขต 3",
+          "province": "สุพรรณบุรี",
+          "voterCount": 128962,
+          "actualVoters": 104692,
+          "invalidVotes": 6273,
+          "noVotes": 1345
+        },
+        {
+          "name": "สุพรรณบุรี เขต 4",
+          "province": "สุพรรณบุรี",
+          "voterCount": 137085,
+          "actualVoters": 108646,
+          "invalidVotes": 6026,
+          "noVotes": 1232
+        },
+        {
+          "name": "สุพรรณบุรี เขต 5",
+          "province": "สุพรรณบุรี",
+          "voterCount": 144544,
+          "actualVoters": 114168,
+          "invalidVotes": 7109,
+          "noVotes": 2586
+        },
+        {
+          "name": "อ่างทอง เขต 1",
+          "province": "อ่างทอง",
+          "voterCount": 111355,
+          "actualVoters": 89918,
+          "invalidVotes": 3263,
+          "noVotes": 2059
+        },
+        {
+          "name": "อ่างทอง เขต 2",
+          "province": "อ่างทอง",
+          "voterCount": 112719,
+          "actualVoters": 91466,
+          "invalidVotes": 3805,
+          "noVotes": 1517
+        }
+      ]
+    },
+    {
+      "regionName": "North",
+      "totalVoters": 9357866,
+      "totalActualVoters": 7183585,
+      "districts": [
+        {
+          "name": "กำแพงเพชร เขต 1",
+          "province": "กำแพงเพชร",
+          "voterCount": 144005,
+          "actualVoters": 106015,
+          "invalidVotes": 6280,
+          "noVotes": 2807
+        },
+        {
+          "name": "กำแพงเพชร เขต 2",
+          "province": "กำแพงเพชร",
+          "voterCount": 146910,
+          "actualVoters": 105670,
+          "invalidVotes": 7512,
+          "noVotes": 2494
+        },
+        {
+          "name": "กำแพงเพชร เขต 3",
+          "province": "กำแพงเพชร",
+          "voterCount": 138018,
+          "actualVoters": 94604,
+          "invalidVotes": 4731,
+          "noVotes": 2244
+        },
+        {
+          "name": "กำแพงเพชร เขต 4",
+          "province": "กำแพงเพชร",
+          "voterCount": 139091,
+          "actualVoters": 97660,
+          "invalidVotes": 5658,
+          "noVotes": 1629
+        },
+        {
+          "name": "เชียงราย เขต 1",
+          "province": "เชียงราย",
+          "voterCount": 135071,
+          "actualVoters": 109475,
+          "invalidVotes": 3628,
+          "noVotes": 2985
+        },
+        {
+          "name": "เชียงราย เขต 2",
+          "province": "เชียงราย",
+          "voterCount": 133639,
+          "actualVoters": 103629,
+          "invalidVotes": 5316,
+          "noVotes": 2121
+        },
+        {
+          "name": "เชียงราย เขต 3",
+          "province": "เชียงราย",
+          "voterCount": 139958,
+          "actualVoters": 110706,
+          "invalidVotes": 7523,
+          "noVotes": 1608
+        },
+        {
+          "name": "เชียงราย เขต 4",
+          "province": "เชียงราย",
+          "voterCount": 143674,
+          "actualVoters": 113169,
+          "invalidVotes": 4947,
+          "noVotes": 2210
+        },
+        {
+          "name": "เชียงราย เขต 5",
+          "province": "เชียงราย",
+          "voterCount": 132452,
+          "actualVoters": 103456,
+          "invalidVotes": 4649,
+          "noVotes": 1582
+        },
+        {
+          "name": "เชียงราย เขต 6",
+          "province": "เชียงราย",
+          "voterCount": 124106,
+          "actualVoters": 87606,
+          "invalidVotes": 5494,
+          "noVotes": 1651
+        },
+        {
+          "name": "เชียงราย เขต 7",
+          "province": "เชียงราย",
+          "voterCount": 133985,
+          "actualVoters": 101295,
+          "invalidVotes": 6250,
+          "noVotes": 2036
+        },
+        {
+          "name": "เชียงใหม่ เขต 1",
+          "province": "เชียงใหม่",
+          "voterCount": 139581,
+          "actualVoters": 108446,
+          "invalidVotes": 2137,
+          "noVotes": 4016
+        },
+        {
+          "name": "เชียงใหม่ เขต 2",
+          "province": "เชียงใหม่",
+          "voterCount": 139823,
+          "actualVoters": 115112,
+          "invalidVotes": 2982,
+          "noVotes": 4113
+        },
+        {
+          "name": "เชียงใหม่ เขต 3",
+          "province": "เชียงใหม่",
+          "voterCount": 134853,
+          "actualVoters": 113609,
+          "invalidVotes": 3577,
+          "noVotes": 2971
+        },
+        {
+          "name": "เชียงใหม่ เขต 4",
+          "province": "เชียงใหม่",
+          "voterCount": 140156,
+          "actualVoters": 114802,
+          "invalidVotes": 2798,
+          "noVotes": 3799
+        },
+        {
+          "name": "เชียงใหม่ เขต 5",
+          "province": "เชียงใหม่",
+          "voterCount": 132614,
+          "actualVoters": 108428,
+          "invalidVotes": 5342,
+          "noVotes": 2678
+        },
+        {
+          "name": "เชียงใหม่ เขต 6",
+          "province": "เชียงใหม่",
+          "voterCount": 126886,
+          "actualVoters": 96543,
+          "invalidVotes": 4760,
+          "noVotes": 1350
+        },
+        {
+          "name": "เชียงใหม่ เขต 7",
+          "province": "เชียงใหม่",
+          "voterCount": 132681,
+          "actualVoters": 103047,
+          "invalidVotes": 6363,
+          "noVotes": 2716
+        },
+        {
+          "name": "เชียงใหม่ เขต 8",
+          "province": "เชียงใหม่",
+          "voterCount": 136368,
+          "actualVoters": 118394,
+          "invalidVotes": 3646,
+          "noVotes": 2748
+        },
+        {
+          "name": "เชียงใหม่ เขต 9",
+          "province": "เชียงใหม่",
+          "voterCount": 124621,
+          "actualVoters": 110009,
+          "invalidVotes": 5023,
+          "noVotes": 1670
+        },
+        {
+          "name": "เชียงใหม่ เขต 10",
+          "province": "เชียงใหม่",
+          "voterCount": 119900,
+          "actualVoters": 99914,
+          "invalidVotes": 7189,
+          "noVotes": 1005
+        },
+        {
+          "name": "ตาก เขต 1",
+          "province": "ตาก",
+          "voterCount": 149937,
+          "actualVoters": 111712,
+          "invalidVotes": 4990,
+          "noVotes": 3165
+        },
+        {
+          "name": "ตาก เขต 2",
+          "province": "ตาก",
+          "voterCount": 124501,
+          "actualVoters": 94674,
+          "invalidVotes": 6902,
+          "noVotes": 2142
+        },
+        {
+          "name": "ตาก เขต 3",
+          "province": "ตาก",
+          "voterCount": 129770,
+          "actualVoters": 98798,
+          "invalidVotes": 9092,
+          "noVotes": 1592
+        },
+        {
+          "name": "นครสวรรค์ เขต 1",
+          "province": "นครสวรรค์",
+          "voterCount": 138993,
+          "actualVoters": 105798,
+          "invalidVotes": 3308,
+          "noVotes": 3445
+        },
+        {
+          "name": "นครสวรรค์ เขต 2",
+          "province": "นครสวรรค์",
+          "voterCount": 136051,
+          "actualVoters": 107230,
+          "invalidVotes": 5033,
+          "noVotes": 2221
+        },
+        {
+          "name": "นครสวรรค์ เขต 3",
+          "province": "นครสวรรค์",
+          "voterCount": 147258,
+          "actualVoters": 109067,
+          "invalidVotes": 5285,
+          "noVotes": 1744
+        },
+        {
+          "name": "นครสวรรค์ เขต 4",
+          "province": "นครสวรรค์",
+          "voterCount": 139375,
+          "actualVoters": 104726,
+          "invalidVotes": 5929,
+          "noVotes": 1226
+        },
+        {
+          "name": "นครสวรรค์ เขต 5",
+          "province": "นครสวรรค์",
+          "voterCount": 140276,
+          "actualVoters": 104880,
+          "invalidVotes": 4488,
+          "noVotes": 1916
+        },
+        {
+          "name": "นครสวรรค์ เขต 6",
+          "province": "นครสวรรค์",
+          "voterCount": 136943,
+          "actualVoters": 97305,
+          "invalidVotes": 4930,
+          "noVotes": 875
+        },
+        {
+          "name": "น่าน เขต 1",
+          "province": "น่าน",
+          "voterCount": 139639,
+          "actualVoters": 111943,
+          "invalidVotes": 5447,
+          "noVotes": 3680
+        },
+        {
+          "name": "น่าน เขต 2",
+          "province": "น่าน",
+          "voterCount": 130207,
+          "actualVoters": 102972,
+          "invalidVotes": 5564,
+          "noVotes": 1924
+        },
+        {
+          "name": "น่าน เขต 3",
+          "province": "น่าน",
+          "voterCount": 119325,
+          "actualVoters": 93628,
+          "invalidVotes": 7058,
+          "noVotes": 1895
+        },
+        {
+          "name": "พะเยา เขต 1",
+          "province": "พะเยา",
+          "voterCount": 126268,
+          "actualVoters": 101698,
+          "invalidVotes": 4420,
+          "noVotes": 3119
+        },
+        {
+          "name": "พะเยา เขต 2",
+          "province": "พะเยา",
+          "voterCount": 128644,
+          "actualVoters": 99198,
+          "invalidVotes": 5711,
+          "noVotes": 1993
+        },
+        {
+          "name": "พะเยา เขต 3",
+          "province": "พะเยา",
+          "voterCount": 131893,
+          "actualVoters": 103270,
+          "invalidVotes": 5887,
+          "noVotes": 1740
+        },
+        {
+          "name": "พิจิตร เขต 1",
+          "province": "พิจิตร",
+          "voterCount": 145488,
+          "actualVoters": 109211,
+          "invalidVotes": 5176,
+          "noVotes": 1738
+        },
+        {
+          "name": "พิจิตร เขต 2",
+          "province": "พิจิตร",
+          "voterCount": 141711,
+          "actualVoters": 100611,
+          "invalidVotes": 5504,
+          "noVotes": 1302
+        },
+        {
+          "name": "พิจิตร เขต 3",
+          "province": "พิจิตร",
+          "voterCount": 140804,
+          "actualVoters": 105762,
+          "invalidVotes": 5297,
+          "noVotes": 945
+        },
+        {
+          "name": "พิษณุโลก เขต 1",
+          "province": "พิษณุโลก",
+          "voterCount": 139465,
+          "actualVoters": 104852,
+          "invalidVotes": 2423,
+          "noVotes": 3666
+        },
+        {
+          "name": "พิษณุโลก เขต 2",
+          "province": "พิษณุโลก",
+          "voterCount": 145515,
+          "actualVoters": 112980,
+          "invalidVotes": 4341,
+          "noVotes": 2576
+        },
+        {
+          "name": "พิษณุโลก เขต 3",
+          "province": "พิษณุโลก",
+          "voterCount": 141757,
+          "actualVoters": 100483,
+          "invalidVotes": 5475,
+          "noVotes": 1463
+        },
+        {
+          "name": "พิษณุโลก เขต 4",
+          "province": "พิษณุโลก",
+          "voterCount": 128045,
+          "actualVoters": 97594,
+          "invalidVotes": 4219,
+          "noVotes": 1239
+        },
+        {
+          "name": "พิษณุโลก เขต 5",
+          "province": "พิษณุโลก",
+          "voterCount": 131613,
+          "actualVoters": 98759,
+          "invalidVotes": 4446,
+          "noVotes": 1935
+        },
+        {
+          "name": "เพชรบูรณ์ เขต 1",
+          "province": "เพชรบูรณ์",
+          "voterCount": 132232,
+          "actualVoters": 96629,
+          "invalidVotes": 4893,
+          "noVotes": 2580
+        },
+        {
+          "name": "เพชรบูรณ์ เขต 2",
+          "province": "เพชรบูรณ์",
+          "voterCount": 130628,
+          "actualVoters": 99420,
+          "invalidVotes": 5254,
+          "noVotes": 2470
+        },
+        {
+          "name": "เพชรบูรณ์ เขต 3",
+          "province": "เพชรบูรณ์",
+          "voterCount": 126045,
+          "actualVoters": 97258,
+          "invalidVotes": 5132,
+          "noVotes": 1761
+        },
+        {
+          "name": "เพชรบูรณ์ เขต 4",
+          "province": "เพชรบูรณ์",
+          "voterCount": 126847,
+          "actualVoters": 86560,
+          "invalidVotes": 4852,
+          "noVotes": 1336
+        },
+        {
+          "name": "เพชรบูรณ์ เขต 5",
+          "province": "เพชรบูรณ์",
+          "voterCount": 132922,
+          "actualVoters": 90939,
+          "invalidVotes": 5235,
+          "noVotes": 1483
+        },
+        {
+          "name": "เพชรบูรณ์ เขต 6",
+          "province": "เพชรบูรณ์",
+          "voterCount": 135651,
+          "actualVoters": 93742,
+          "invalidVotes": 4680,
+          "noVotes": 1394
+        },
+        {
+          "name": "แพร่ เขต 1",
+          "province": "แพร่",
+          "voterCount": 123829,
+          "actualVoters": 101847,
+          "invalidVotes": 2895,
+          "noVotes": 2375
+        },
+        {
+          "name": "แพร่ เขต 2",
+          "province": "แพร่",
+          "voterCount": 118487,
+          "actualVoters": 93210,
+          "invalidVotes": 3922,
+          "noVotes": 1261
+        },
+        {
+          "name": "แพร่ เขต 3",
+          "province": "แพร่",
+          "voterCount": 123632,
+          "actualVoters": 92824,
+          "invalidVotes": 5137,
+          "noVotes": 1720
+        },
+        {
+          "name": "แม่ฮ่องสอน เขต 1",
+          "province": "แม่ฮ่องสอน",
+          "voterCount": 87373,
+          "actualVoters": 71189,
+          "invalidVotes": 4081,
+          "noVotes": 1334
+        },
+        {
+          "name": "แม่ฮ่องสอน เขต 2",
+          "province": "แม่ฮ่องสอน",
+          "voterCount": 93725,
+          "actualVoters": 76793,
+          "invalidVotes": 5714,
+          "noVotes": 1146
+        },
+        {
+          "name": "ลำปาง เขต 1",
+          "province": "ลำปาง",
+          "voterCount": 148928,
+          "actualVoters": 120565,
+          "invalidVotes": 4437,
+          "noVotes": 4183
+        },
+        {
+          "name": "ลำปาง เขต 2",
+          "province": "ลำปาง",
+          "voterCount": 153670,
+          "actualVoters": 119599,
+          "invalidVotes": 7339,
+          "noVotes": 2638
+        },
+        {
+          "name": "ลำปาง เขต 3",
+          "province": "ลำปาง",
+          "voterCount": 149147,
+          "actualVoters": 120834,
+          "invalidVotes": 5579,
+          "noVotes": 3944
+        },
+        {
+          "name": "ลำปาง เขต 4",
+          "province": "ลำปาง",
+          "voterCount": 160855,
+          "actualVoters": 122131,
+          "invalidVotes": 6763,
+          "noVotes": 2341
+        },
+        {
+          "name": "ลำพูน เขต 1",
+          "province": "ลำพูน",
+          "voterCount": 168981,
+          "actualVoters": 146167,
+          "invalidVotes": 5245,
+          "noVotes": 3353
+        },
+        {
+          "name": "ลำพูน เขต 2",
+          "province": "ลำพูน",
+          "voterCount": 164411,
+          "actualVoters": 141388,
+          "invalidVotes": 7226,
+          "noVotes": 2787
+        },
+        {
+          "name": "สุโขทัย เขต 1",
+          "province": "สุโขทัย",
+          "voterCount": 119308,
+          "actualVoters": 89158,
+          "invalidVotes": 3929,
+          "noVotes": 2856
+        },
+        {
+          "name": "สุโขทัย เขต 2",
+          "province": "สุโขทัย",
+          "voterCount": 117981,
+          "actualVoters": 84373,
+          "invalidVotes": 4677,
+          "noVotes": 1290
+        },
+        {
+          "name": "สุโขทัย เขต 3",
+          "province": "สุโขทัย",
+          "voterCount": 121622,
+          "actualVoters": 91645,
+          "invalidVotes": 4376,
+          "noVotes": 1252
+        },
+        {
+          "name": "สุโขทัย เขต 4",
+          "province": "สุโขทัย",
+          "voterCount": 120730,
+          "actualVoters": 89737,
+          "invalidVotes": 4878,
+          "noVotes": 1802
+        },
+        {
+          "name": "อุตรดิตถ์ เขต 1",
+          "province": "อุตรดิตถ์",
+          "voterCount": 118390,
+          "actualVoters": 90411,
+          "invalidVotes": 3357,
+          "noVotes": 2028
+        },
+        {
+          "name": "อุตรดิตถ์ เขต 2",
+          "province": "อุตรดิตถ์",
+          "voterCount": 125354,
+          "actualVoters": 89997,
+          "invalidVotes": 5237,
+          "noVotes": 2104
+        },
+        {
+          "name": "อุตรดิตถ์ เขต 3",
+          "province": "อุตรดิตถ์",
+          "voterCount": 124268,
+          "actualVoters": 92484,
+          "invalidVotes": 4034,
+          "noVotes": 2288
+        },
+        {
+          "name": "อุทัยธานี เขต 1",
+          "province": "อุทัยธานี",
+          "voterCount": 127586,
+          "actualVoters": 92174,
+          "invalidVotes": 4581,
+          "noVotes": 2765
+        },
+        {
+          "name": "อุทัยธานี เขต 2",
+          "province": "อุทัยธานี",
+          "voterCount": 133394,
+          "actualVoters": 93771,
+          "invalidVotes": 5304,
+          "noVotes": 1675
+        }
+      ]
+    },
+    {
+      "regionName": "Northeast",
+      "totalVoters": 17436309,
+      "totalActualVoters": 12452007,
+      "districts": [
+        {
+          "name": "กาฬสินธุ์ เขต 1",
+          "province": "กาฬสินธุ์",
+          "voterCount": 130873,
+          "actualVoters": 94594,
+          "invalidVotes": 3195,
+          "noVotes": 1536
+        },
+        {
+          "name": "กาฬสินธุ์ เขต 2",
+          "province": "กาฬสินธุ์",
+          "voterCount": 126334,
+          "actualVoters": 90776,
+          "invalidVotes": 3013,
+          "noVotes": 658
+        },
+        {
+          "name": "กาฬสินธุ์ เขต 3",
+          "province": "กาฬสินธุ์",
+          "voterCount": 123546,
+          "actualVoters": 85608,
+          "invalidVotes": 3757,
+          "noVotes": 980
+        },
+        {
+          "name": "กาฬสินธุ์ เขต 4",
+          "province": "กาฬสินธุ์",
+          "voterCount": 135327,
+          "actualVoters": 95030,
+          "invalidVotes": 3996,
+          "noVotes": 1004
+        },
+        {
+          "name": "กาฬสินธุ์ เขต 5",
+          "province": "กาฬสินธุ์",
+          "voterCount": 136514,
+          "actualVoters": 97068,
+          "invalidVotes": 4222,
+          "noVotes": 1340
+        },
+        {
+          "name": "กาฬสินธุ์ เขต 6",
+          "province": "กาฬสินธุ์",
+          "voterCount": 135611,
+          "actualVoters": 94830,
+          "invalidVotes": 4091,
+          "noVotes": 1936
+        },
+        {
+          "name": "ขอนแก่น เขต 1",
+          "province": "ขอนแก่น",
+          "voterCount": 129179,
+          "actualVoters": 96838,
+          "invalidVotes": 1850,
+          "noVotes": 3189
+        },
+        {
+          "name": "ขอนแก่น เขต 2",
+          "province": "ขอนแก่น",
+          "voterCount": 133299,
+          "actualVoters": 106220,
+          "invalidVotes": 2520,
+          "noVotes": 2973
+        },
+        {
+          "name": "ขอนแก่น เขต 3",
+          "province": "ขอนแก่น",
+          "voterCount": 131940,
+          "actualVoters": 96745,
+          "invalidVotes": 2702,
+          "noVotes": 804
+        },
+        {
+          "name": "ขอนแก่น เขต 4",
+          "province": "ขอนแก่น",
+          "voterCount": 130143,
+          "actualVoters": 98738,
+          "invalidVotes": 2575,
+          "noVotes": 1524
+        },
+        {
+          "name": "ขอนแก่น เขต 5",
+          "province": "ขอนแก่น",
+          "voterCount": 131205,
+          "actualVoters": 87102,
+          "invalidVotes": 2872,
+          "noVotes": 1180
+        },
+        {
+          "name": "ขอนแก่น เขต 6",
+          "province": "ขอนแก่น",
+          "voterCount": 129388,
+          "actualVoters": 90922,
+          "invalidVotes": 3002,
+          "noVotes": 1381
+        },
+        {
+          "name": "ขอนแก่น เขต 7",
+          "province": "ขอนแก่น",
+          "voterCount": 132057,
+          "actualVoters": 98097,
+          "invalidVotes": 3746,
+          "noVotes": 958
+        },
+        {
+          "name": "ขอนแก่น เขต 8",
+          "province": "ขอนแก่น",
+          "voterCount": 138274,
+          "actualVoters": 102147,
+          "invalidVotes": 3909,
+          "noVotes": 1685
+        },
+        {
+          "name": "ขอนแก่น เขต 9",
+          "province": "ขอนแก่น",
+          "voterCount": 126949,
+          "actualVoters": 87404,
+          "invalidVotes": 3402,
+          "noVotes": 966
+        },
+        {
+          "name": "ขอนแก่น เขต 10",
+          "province": "ขอนแก่น",
+          "voterCount": 134888,
+          "actualVoters": 92271,
+          "invalidVotes": 3503,
+          "noVotes": 864
+        },
+        {
+          "name": "ขอนแก่น เขต 11",
+          "province": "ขอนแก่น",
+          "voterCount": 131436,
+          "actualVoters": 94907,
+          "invalidVotes": 3253,
+          "noVotes": 710
+        },
+        {
+          "name": "ชัยภูมิ เขต 1",
+          "province": "ชัยภูมิ",
+          "voterCount": 129659,
+          "actualVoters": 96638,
+          "invalidVotes": 3660,
+          "noVotes": 1871
+        },
+        {
+          "name": "ชัยภูมิ เขต 2",
+          "province": "ชัยภูมิ",
+          "voterCount": 134045,
+          "actualVoters": 96809,
+          "invalidVotes": 4435,
+          "noVotes": 1291
+        },
+        {
+          "name": "ชัยภูมิ เขต 3",
+          "province": "ชัยภูมิ",
+          "voterCount": 125919,
+          "actualVoters": 89484,
+          "invalidVotes": 4417,
+          "noVotes": 818
+        },
+        {
+          "name": "ชัยภูมิ เขต 4",
+          "province": "ชัยภูมิ",
+          "voterCount": 119870,
+          "actualVoters": 81576,
+          "invalidVotes": 4212,
+          "noVotes": 768
+        },
+        {
+          "name": "ชัยภูมิ เขต 5",
+          "province": "ชัยภูมิ",
+          "voterCount": 131847,
+          "actualVoters": 93540,
+          "invalidVotes": 5035,
+          "noVotes": 1035
+        },
+        {
+          "name": "ชัยภูมิ เขต 6",
+          "province": "ชัยภูมิ",
+          "voterCount": 133733,
+          "actualVoters": 97337,
+          "invalidVotes": 4282,
+          "noVotes": 794
+        },
+        {
+          "name": "ชัยภูมิ เขต 7",
+          "province": "ชัยภูมิ",
+          "voterCount": 126779,
+          "actualVoters": 89778,
+          "invalidVotes": 3434,
+          "noVotes": 865
+        },
+        {
+          "name": "นครพนม เขต 1",
+          "province": "นครพนม",
+          "voterCount": 141695,
+          "actualVoters": 100285,
+          "invalidVotes": 3976,
+          "noVotes": 815
+        },
+        {
+          "name": "นครพนม เขต 2",
+          "province": "นครพนม",
+          "voterCount": 141004,
+          "actualVoters": 99905,
+          "invalidVotes": 3741,
+          "noVotes": 1226
+        },
+        {
+          "name": "นครพนม เขต 3",
+          "province": "นครพนม",
+          "voterCount": 141726,
+          "actualVoters": 97928,
+          "invalidVotes": 2652,
+          "noVotes": 1318
+        },
+        {
+          "name": "นครพนม เขต 4",
+          "province": "นครพนม",
+          "voterCount": 143201,
+          "actualVoters": 99880,
+          "invalidVotes": 3309,
+          "noVotes": 898
+        },
+        {
+          "name": "นครราชสีมา เขต 1",
+          "province": "นครราชสีมา",
+          "voterCount": 133340,
+          "actualVoters": 100575,
+          "invalidVotes": 2730,
+          "noVotes": 3820
+        },
+        {
+          "name": "นครราชสีมา เขต 2",
+          "province": "นครราชสีมา",
+          "voterCount": 133796,
+          "actualVoters": 107146,
+          "invalidVotes": 3798,
+          "noVotes": 3452
+        },
+        {
+          "name": "นครราชสีมา เขต 3",
+          "province": "นครราชสีมา",
+          "voterCount": 132267,
+          "actualVoters": 105476,
+          "invalidVotes": 3154,
+          "noVotes": 3485
+        },
+        {
+          "name": "นครราชสีมา เขต 4",
+          "province": "นครราชสีมา",
+          "voterCount": 130092,
+          "actualVoters": 103657,
+          "invalidVotes": 5802,
+          "noVotes": 1588
+        },
+        {
+          "name": "นครราชสีมา เขต 5",
+          "province": "นครราชสีมา",
+          "voterCount": 132503,
+          "actualVoters": 102125,
+          "invalidVotes": 4805,
+          "noVotes": 1658
+        },
+        {
+          "name": "นครราชสีมา เขต 6",
+          "province": "นครราชสีมา",
+          "voterCount": 133571,
+          "actualVoters": 92005,
+          "invalidVotes": 3750,
+          "noVotes": 1425
+        },
+        {
+          "name": "นครราชสีมา เขต 7",
+          "province": "นครราชสีมา",
+          "voterCount": 131476,
+          "actualVoters": 91376,
+          "invalidVotes": 3412,
+          "noVotes": 935
+        },
+        {
+          "name": "นครราชสีมา เขต 8",
+          "province": "นครราชสีมา",
+          "voterCount": 132802,
+          "actualVoters": 98058,
+          "invalidVotes": 4300,
+          "noVotes": 1367
+        },
+        {
+          "name": "นครราชสีมา เขต 9",
+          "province": "นครราชสีมา",
+          "voterCount": 134590,
+          "actualVoters": 100191,
+          "invalidVotes": 4312,
+          "noVotes": 885
+        },
+        {
+          "name": "นครราชสีมา เขต 10",
+          "province": "นครราชสีมา",
+          "voterCount": 136035,
+          "actualVoters": 114700,
+          "invalidVotes": 4294,
+          "noVotes": 1503
+        },
+        {
+          "name": "นครราชสีมา เขต 11",
+          "province": "นครราชสีมา",
+          "voterCount": 130497,
+          "actualVoters": 102477,
+          "invalidVotes": 4490,
+          "noVotes": 976
+        },
+        {
+          "name": "นครราชสีมา เขต 12",
+          "province": "นครราชสีมา",
+          "voterCount": 130718,
+          "actualVoters": 104448,
+          "invalidVotes": 4219,
+          "noVotes": 1240
+        },
+        {
+          "name": "นครราชสีมา เขต 13",
+          "province": "นครราชสีมา",
+          "voterCount": 128122,
+          "actualVoters": 94218,
+          "invalidVotes": 4686,
+          "noVotes": 1645
+        },
+        {
+          "name": "นครราชสีมา เขต 14",
+          "province": "นครราชสีมา",
+          "voterCount": 127214,
+          "actualVoters": 96450,
+          "invalidVotes": 3881,
+          "noVotes": 1924
+        },
+        {
+          "name": "นครราชสีมา เขต 15",
+          "province": "นครราชสีมา",
+          "voterCount": 136904,
+          "actualVoters": 106452,
+          "invalidVotes": 4326,
+          "noVotes": 862
+        },
+        {
+          "name": "นครราชสีมา เขต 16",
+          "province": "นครราชสีมา",
+          "voterCount": 135617,
+          "actualVoters": 97724,
+          "invalidVotes": 3766,
+          "noVotes": 822
+        },
+        {
+          "name": "บึงกาฬ เขต 1",
+          "province": "บึงกาฬ",
+          "voterCount": 102624,
+          "actualVoters": 75681,
+          "invalidVotes": 2582,
+          "noVotes": 858
+        },
+        {
+          "name": "บึงกาฬ เขต 2",
+          "province": "บึงกาฬ",
+          "voterCount": 107684,
+          "actualVoters": 76441,
+          "invalidVotes": 2560,
+          "noVotes": 829
+        },
+        {
+          "name": "บึงกาฬ เขต 3",
+          "province": "บึงกาฬ",
+          "voterCount": 116771,
+          "actualVoters": 79628,
+          "invalidVotes": 3236,
+          "noVotes": 998
+        },
+        {
+          "name": "บุรีรัมย์ เขต 1",
+          "province": "บุรีรัมย์",
+          "voterCount": 123335,
+          "actualVoters": 90518,
+          "invalidVotes": 4720,
+          "noVotes": 2090
+        },
+        {
+          "name": "บุรีรัมย์ เขต 2",
+          "province": "บุรีรัมย์",
+          "voterCount": 125614,
+          "actualVoters": 88374,
+          "invalidVotes": 4480,
+          "noVotes": 1610
+        },
+        {
+          "name": "บุรีรัมย์ เขต 3",
+          "province": "บุรีรัมย์",
+          "voterCount": 124152,
+          "actualVoters": 83920,
+          "invalidVotes": 4778,
+          "noVotes": 1081
+        },
+        {
+          "name": "บุรีรัมย์ เขต 4",
+          "province": "บุรีรัมย์",
+          "voterCount": 120551,
+          "actualVoters": 82153,
+          "invalidVotes": 4262,
+          "noVotes": 832
+        },
+        {
+          "name": "บุรีรัมย์ เขต 5",
+          "province": "บุรีรัมย์",
+          "voterCount": 131561,
+          "actualVoters": 89915,
+          "invalidVotes": 4158,
+          "noVotes": 1435
+        },
+        {
+          "name": "บุรีรัมย์ เขต 6",
+          "province": "บุรีรัมย์",
+          "voterCount": 130870,
+          "actualVoters": 87125,
+          "invalidVotes": 3825,
+          "noVotes": 1688
+        },
+        {
+          "name": "บุรีรัมย์ เขต 7",
+          "province": "บุรีรัมย์",
+          "voterCount": 121836,
+          "actualVoters": 86863,
+          "invalidVotes": 3916,
+          "noVotes": 1065
+        },
+        {
+          "name": "บุรีรัมย์ เขต 8",
+          "province": "บุรีรัมย์",
+          "voterCount": 125882,
+          "actualVoters": 92560,
+          "invalidVotes": 4582,
+          "noVotes": 1839
+        },
+        {
+          "name": "บุรีรัมย์ เขต 9",
+          "province": "บุรีรัมย์",
+          "voterCount": 125926,
+          "actualVoters": 88326,
+          "invalidVotes": 4306,
+          "noVotes": 1001
+        },
+        {
+          "name": "บุรีรัมย์ เขต 10",
+          "province": "บุรีรัมย์",
+          "voterCount": 120188,
+          "actualVoters": 82599,
+          "invalidVotes": 4400,
+          "noVotes": 1200
+        },
+        {
+          "name": "มหาสารคาม เขต 1",
+          "province": "มหาสารคาม",
+          "voterCount": 126660,
+          "actualVoters": 95990,
+          "invalidVotes": 1973,
+          "noVotes": 2045
+        },
+        {
+          "name": "มหาสารคาม เขต 2",
+          "province": "มหาสารคาม",
+          "voterCount": 127877,
+          "actualVoters": 90040,
+          "invalidVotes": 3291,
+          "noVotes": 1041
+        },
+        {
+          "name": "มหาสารคาม เขต 3",
+          "province": "มหาสารคาม",
+          "voterCount": 129126,
+          "actualVoters": 92042,
+          "invalidVotes": 3285,
+          "noVotes": 432
+        },
+        {
+          "name": "มหาสารคาม เขต 4",
+          "province": "มหาสารคาม",
+          "voterCount": 125426,
+          "actualVoters": 88748,
+          "invalidVotes": 2207,
+          "noVotes": 840
+        },
+        {
+          "name": "มหาสารคาม เขต 5",
+          "province": "มหาสารคาม",
+          "voterCount": 132257,
+          "actualVoters": 95987,
+          "invalidVotes": 2750,
+          "noVotes": 1208
+        },
+        {
+          "name": "มหาสารคาม เขต 6",
+          "province": "มหาสารคาม",
+          "voterCount": 131501,
+          "actualVoters": 97770,
+          "invalidVotes": 2886,
+          "noVotes": 1171
+        },
+        {
+          "name": "มุกดาหาร เขต 1",
+          "province": "มุกดาหาร",
+          "voterCount": 139625,
+          "actualVoters": 106225,
+          "invalidVotes": 3669,
+          "noVotes": 1714
+        },
+        {
+          "name": "มุกดาหาร เขต 2",
+          "province": "มุกดาหาร",
+          "voterCount": 137161,
+          "actualVoters": 102939,
+          "invalidVotes": 3552,
+          "noVotes": 1726
+        },
+        {
+          "name": "ยโสธร เขต 1",
+          "province": "ยโสธร",
+          "voterCount": 144816,
+          "actualVoters": 110491,
+          "invalidVotes": 2857,
+          "noVotes": 1341
+        },
+        {
+          "name": "ยโสธร เขต 2",
+          "province": "ยโสธร",
+          "voterCount": 141902,
+          "actualVoters": 98432,
+          "invalidVotes": 3161,
+          "noVotes": 853
+        },
+        {
+          "name": "ยโสธร เขต 3",
+          "province": "ยโสธร",
+          "voterCount": 145408,
+          "actualVoters": 104532,
+          "invalidVotes": 3312,
+          "noVotes": 922
+        },
+        {
+          "name": "ร้อยเอ็ด เขต 1",
+          "province": "ร้อยเอ็ด",
+          "voterCount": 126208,
+          "actualVoters": 97457,
+          "invalidVotes": 2059,
+          "noVotes": 1528
+        },
+        {
+          "name": "ร้อยเอ็ด เขต 2",
+          "province": "ร้อยเอ็ด",
+          "voterCount": 136449,
+          "actualVoters": 96360,
+          "invalidVotes": 3047,
+          "noVotes": 1038
+        },
+        {
+          "name": "ร้อยเอ็ด เขต 3",
+          "province": "ร้อยเอ็ด",
+          "voterCount": 132389,
+          "actualVoters": 90228,
+          "invalidVotes": 1822,
+          "noVotes": 893
+        },
+        {
+          "name": "ร้อยเอ็ด เขต 4",
+          "province": "ร้อยเอ็ด",
+          "voterCount": 129800,
+          "actualVoters": 87354,
+          "invalidVotes": 3216,
+          "noVotes": 1011
+        },
+        {
+          "name": "ร้อยเอ็ด เขต 5",
+          "province": "ร้อยเอ็ด",
+          "voterCount": 133547,
+          "actualVoters": 88378,
+          "invalidVotes": 3033,
+          "noVotes": 1332
+        },
+        {
+          "name": "ร้อยเอ็ด เขต 6",
+          "province": "ร้อยเอ็ด",
+          "voterCount": 130379,
+          "actualVoters": 88342,
+          "invalidVotes": 2875,
+          "noVotes": 1007
+        },
+        {
+          "name": "ร้อยเอ็ด เขต 7",
+          "province": "ร้อยเอ็ด",
+          "voterCount": 134249,
+          "actualVoters": 92305,
+          "invalidVotes": 2237,
+          "noVotes": 640
+        },
+        {
+          "name": "ร้อยเอ็ด เขต 8",
+          "province": "ร้อยเอ็ด",
+          "voterCount": 131683,
+          "actualVoters": 93392,
+          "invalidVotes": 1880,
+          "noVotes": 1013
+        },
+        {
+          "name": "เลย เขต 1",
+          "province": "เลย",
+          "voterCount": 124668,
+          "actualVoters": 96500,
+          "invalidVotes": 3774,
+          "noVotes": 2766
+        },
+        {
+          "name": "เลย เขต 2",
+          "province": "เลย",
+          "voterCount": 132119,
+          "actualVoters": 93344,
+          "invalidVotes": 4609,
+          "noVotes": 1790
+        },
+        {
+          "name": "เลย เขต 3",
+          "province": "เลย",
+          "voterCount": 124801,
+          "actualVoters": 98765,
+          "invalidVotes": 3944,
+          "noVotes": 1631
+        },
+        {
+          "name": "เลย เขต 4",
+          "province": "เลย",
+          "voterCount": 123302,
+          "actualVoters": 93584,
+          "invalidVotes": 4098,
+          "noVotes": 1775
+        },
+        {
+          "name": "ศรีสะเกษ เขต 1",
+          "province": "ศรีสะเกษ",
+          "voterCount": 132184,
+          "actualVoters": 100569,
+          "invalidVotes": 3576,
+          "noVotes": 1425
+        },
+        {
+          "name": "ศรีสะเกษ เขต 2",
+          "province": "ศรีสะเกษ",
+          "voterCount": 127574,
+          "actualVoters": 87917,
+          "invalidVotes": 4045,
+          "noVotes": 1715
+        },
+        {
+          "name": "ศรีสะเกษ เขต 3",
+          "province": "ศรีสะเกษ",
+          "voterCount": 123066,
+          "actualVoters": 89855,
+          "invalidVotes": 4576,
+          "noVotes": 916
+        },
+        {
+          "name": "ศรีสะเกษ เขต 4",
+          "province": "ศรีสะเกษ",
+          "voterCount": 121071,
+          "actualVoters": 86615,
+          "invalidVotes": 4475,
+          "noVotes": 950
+        },
+        {
+          "name": "ศรีสะเกษ เขต 5",
+          "province": "ศรีสะเกษ",
+          "voterCount": 125809,
+          "actualVoters": 87828,
+          "invalidVotes": 5343,
+          "noVotes": 1052
+        },
+        {
+          "name": "ศรีสะเกษ เขต 6",
+          "province": "ศรีสะเกษ",
+          "voterCount": 127619,
+          "actualVoters": 89674,
+          "invalidVotes": 5393,
+          "noVotes": 1175
+        },
+        {
+          "name": "ศรีสะเกษ เขต 7",
+          "province": "ศรีสะเกษ",
+          "voterCount": 127209,
+          "actualVoters": 87119,
+          "invalidVotes": 4959,
+          "noVotes": 1300
+        },
+        {
+          "name": "ศรีสะเกษ เขต 8",
+          "province": "ศรีสะเกษ",
+          "voterCount": 132733,
+          "actualVoters": 97459,
+          "invalidVotes": 3846,
+          "noVotes": 753
+        },
+        {
+          "name": "ศรีสะเกษ เขต 9",
+          "province": "ศรีสะเกษ",
+          "voterCount": 139460,
+          "actualVoters": 98658,
+          "invalidVotes": 4634,
+          "noVotes": 1206
+        },
+        {
+          "name": "สกลนคร เขต 1",
+          "province": "สกลนคร",
+          "voterCount": 132357,
+          "actualVoters": 96244,
+          "invalidVotes": 2742,
+          "noVotes": 2820
+        },
+        {
+          "name": "สกลนคร เขต 2",
+          "province": "สกลนคร",
+          "voterCount": 130255,
+          "actualVoters": 90918,
+          "invalidVotes": 2470,
+          "noVotes": 1369
+        },
+        {
+          "name": "สกลนคร เขต 3",
+          "province": "สกลนคร",
+          "voterCount": 132724,
+          "actualVoters": 92272,
+          "invalidVotes": 2879,
+          "noVotes": 1081
+        },
+        {
+          "name": "สกลนคร เขต 4",
+          "province": "สกลนคร",
+          "voterCount": 127317,
+          "actualVoters": 88340,
+          "invalidVotes": 2434,
+          "noVotes": 1749
+        },
+        {
+          "name": "สกลนคร เขต 5",
+          "province": "สกลนคร",
+          "voterCount": 128271,
+          "actualVoters": 85443,
+          "invalidVotes": 2864,
+          "noVotes": 877
+        },
+        {
+          "name": "สกลนคร เขต 6",
+          "province": "สกลนคร",
+          "voterCount": 128009,
+          "actualVoters": 83631,
+          "invalidVotes": 2394,
+          "noVotes": 1094
+        },
+        {
+          "name": "สกลนคร เขต 7",
+          "province": "สกลนคร",
+          "voterCount": 129965,
+          "actualVoters": 82845,
+          "invalidVotes": 2420,
+          "noVotes": 1192
+        },
+        {
+          "name": "สุรินทร์ เขต 1",
+          "province": "สุรินทร์",
+          "voterCount": 135300,
+          "actualVoters": 100333,
+          "invalidVotes": 3447,
+          "noVotes": 2274
+        },
+        {
+          "name": "สุรินทร์ เขต 2",
+          "province": "สุรินทร์",
+          "voterCount": 138837,
+          "actualVoters": 101279,
+          "invalidVotes": 3876,
+          "noVotes": 1480
+        },
+        {
+          "name": "สุรินทร์ เขต 3",
+          "province": "สุรินทร์",
+          "voterCount": 137628,
+          "actualVoters": 94821,
+          "invalidVotes": 4143,
+          "noVotes": 845
+        },
+        {
+          "name": "สุรินทร์ เขต 4",
+          "province": "สุรินทร์",
+          "voterCount": 139262,
+          "actualVoters": 93230,
+          "invalidVotes": 3519,
+          "noVotes": 1601
+        },
+        {
+          "name": "สุรินทร์ เขต 5",
+          "province": "สุรินทร์",
+          "voterCount": 135384,
+          "actualVoters": 88718,
+          "invalidVotes": 3406,
+          "noVotes": 1225
+        },
+        {
+          "name": "สุรินทร์ เขต 6",
+          "province": "สุรินทร์",
+          "voterCount": 132918,
+          "actualVoters": 89196,
+          "invalidVotes": 4773,
+          "noVotes": 845
+        },
+        {
+          "name": "สุรินทร์ เขต 7",
+          "province": "สุรินทร์",
+          "voterCount": 134858,
+          "actualVoters": 96743,
+          "invalidVotes": 3771,
+          "noVotes": 1472
+        },
+        {
+          "name": "สุรินทร์ เขต 8",
+          "province": "สุรินทร์",
+          "voterCount": 134865,
+          "actualVoters": 91228,
+          "invalidVotes": 5424,
+          "noVotes": 1084
+        },
+        {
+          "name": "หนองคาย เขต 1",
+          "province": "หนองคาย",
+          "voterCount": 138031,
+          "actualVoters": 97081,
+          "invalidVotes": 3596,
+          "noVotes": 1859
+        },
+        {
+          "name": "หนองคาย เขต 2",
+          "province": "หนองคาย",
+          "voterCount": 135023,
+          "actualVoters": 87296,
+          "invalidVotes": 4217,
+          "noVotes": 995
+        },
+        {
+          "name": "หนองคาย เขต 3",
+          "province": "หนองคาย",
+          "voterCount": 136980,
+          "actualVoters": 92354,
+          "invalidVotes": 3516,
+          "noVotes": 1493
+        },
+        {
+          "name": "หนองบัวลำภู เขต 1",
+          "province": "หนองบัวลำภู",
+          "voterCount": 138523,
+          "actualVoters": 95960,
+          "invalidVotes": 4225,
+          "noVotes": 1451
+        },
+        {
+          "name": "หนองบัวลำภู เขต 2",
+          "province": "หนองบัวลำภู",
+          "voterCount": 135176,
+          "actualVoters": 88961,
+          "invalidVotes": 2778,
+          "noVotes": 867
+        },
+        {
+          "name": "หนองบัวลำภู เขต 3",
+          "province": "หนองบัวลำภู",
+          "voterCount": 130715,
+          "actualVoters": 87226,
+          "invalidVotes": 3317,
+          "noVotes": 866
+        },
+        {
+          "name": "อำนาจเจริญ เขต 1",
+          "province": "อำนาจเจริญ",
+          "voterCount": 145416,
+          "actualVoters": 105574,
+          "invalidVotes": 3359,
+          "noVotes": 1269
+        },
+        {
+          "name": "อำนาจเจริญ เขต 2",
+          "province": "อำนาจเจริญ",
+          "voterCount": 155936,
+          "actualVoters": 111813,
+          "invalidVotes": 3824,
+          "noVotes": 1101
+        },
+        {
+          "name": "อุดรธานี เขต 1",
+          "province": "อุดรธานี",
+          "voterCount": 127631,
+          "actualVoters": 90592,
+          "invalidVotes": 1988,
+          "noVotes": 2912
+        },
+        {
+          "name": "อุดรธานี เขต 2",
+          "province": "อุดรธานี",
+          "voterCount": 126532,
+          "actualVoters": 90418,
+          "invalidVotes": 2572,
+          "noVotes": 2620
+        },
+        {
+          "name": "อุดรธานี เขต 3",
+          "province": "อุดรธานี",
+          "voterCount": 124503,
+          "actualVoters": 82967,
+          "invalidVotes": 3306,
+          "noVotes": 947
+        },
+        {
+          "name": "อุดรธานี เขต 4",
+          "province": "อุดรธานี",
+          "voterCount": 125363,
+          "actualVoters": 80439,
+          "invalidVotes": 2416,
+          "noVotes": 561
+        },
+        {
+          "name": "อุดรธานี เขต 5",
+          "province": "อุดรธานี",
+          "voterCount": 122848,
+          "actualVoters": 77781,
+          "invalidVotes": 2537,
+          "noVotes": 929
+        },
+        {
+          "name": "อุดรธานี เขต 6",
+          "province": "อุดรธานี",
+          "voterCount": 125610,
+          "actualVoters": 84614,
+          "invalidVotes": 2461,
+          "noVotes": 770
+        },
+        {
+          "name": "อุดรธานี เขต 7",
+          "province": "อุดรธานี",
+          "voterCount": 128164,
+          "actualVoters": 83997,
+          "invalidVotes": 2330,
+          "noVotes": 1423
+        },
+        {
+          "name": "อุดรธานี เขต 8",
+          "province": "อุดรธานี",
+          "voterCount": 122306,
+          "actualVoters": 82330,
+          "invalidVotes": 2738,
+          "noVotes": 1200
+        },
+        {
+          "name": "อุดรธานี เขต 9",
+          "province": "อุดรธานี",
+          "voterCount": 123681,
+          "actualVoters": 85776,
+          "invalidVotes": 3295,
+          "noVotes": 1255
+        },
+        {
+          "name": "อุดรธานี เขต 10",
+          "province": "อุดรธานี",
+          "voterCount": 121558,
+          "actualVoters": 83474,
+          "invalidVotes": 3510,
+          "noVotes": 1360
+        },
+        {
+          "name": "อุบลราชธานี เขต 1",
+          "province": "อุบลราชธานี",
+          "voterCount": 131647,
+          "actualVoters": 104255,
+          "invalidVotes": 2143,
+          "noVotes": 3089
+        },
+        {
+          "name": "อุบลราชธานี เขต 2",
+          "province": "อุบลราชธานี",
+          "voterCount": 135410,
+          "actualVoters": 99861,
+          "invalidVotes": 5014,
+          "noVotes": 2501
+        },
+        {
+          "name": "อุบลราชธานี เขต 3",
+          "province": "อุบลราชธานี",
+          "voterCount": 138593,
+          "actualVoters": 103707,
+          "invalidVotes": 3249,
+          "noVotes": 884
+        },
+        {
+          "name": "อุบลราชธานี เขต 4",
+          "province": "อุบลราชธานี",
+          "voterCount": 142804,
+          "actualVoters": 109437,
+          "invalidVotes": 5196,
+          "noVotes": 3666
+        },
+        {
+          "name": "อุบลราชธานี เขต 5",
+          "province": "อุบลราชธานี",
+          "voterCount": 130284,
+          "actualVoters": 93368,
+          "invalidVotes": 2873,
+          "noVotes": 697
+        },
+        {
+          "name": "อุบลราชธานี เขต 6",
+          "province": "อุบลราชธานี",
+          "voterCount": 128707,
+          "actualVoters": 88724,
+          "invalidVotes": 3198,
+          "noVotes": 701
+        },
+        {
+          "name": "อุบลราชธานี เขต 7",
+          "province": "อุบลราชธานี",
+          "voterCount": 127884,
+          "actualVoters": 91944,
+          "invalidVotes": 2775,
+          "noVotes": 696
+        },
+        {
+          "name": "อุบลราชธานี เขต 8",
+          "province": "อุบลราชธานี",
+          "voterCount": 135989,
+          "actualVoters": 96804,
+          "invalidVotes": 3374,
+          "noVotes": 1374
+        },
+        {
+          "name": "อุบลราชธานี เขต 9",
+          "province": "อุบลราชธานี",
+          "voterCount": 128539,
+          "actualVoters": 86559,
+          "invalidVotes": 3749,
+          "noVotes": 960
+        },
+        {
+          "name": "อุบลราชธานี เขต 10",
+          "province": "อุบลราชธานี",
+          "voterCount": 139504,
+          "actualVoters": 101369,
+          "invalidVotes": 3181,
+          "noVotes": 760
+        },
+        {
+          "name": "อุบลราชธานี เขต 11",
+          "province": "อุบลราชธานี",
+          "voterCount": 133945,
+          "actualVoters": 93548,
+          "invalidVotes": 2790,
+          "noVotes": 805
+        }
+      ]
+    },
+    {
+      "regionName": "South",
+      "totalVoters": 7200023,
+      "totalActualVoters": 5654698,
+      "districts": [
+        {
+          "name": "กระบี่ เขต 1",
+          "province": "กระบี่",
+          "voterCount": 122769,
+          "actualVoters": 102097,
+          "invalidVotes": 3521,
+          "noVotes": 2184
+        },
+        {
+          "name": "กระบี่ เขต 2",
+          "province": "กระบี่",
+          "voterCount": 114538,
+          "actualVoters": 93287,
+          "invalidVotes": 3532,
+          "noVotes": 2597
+        },
+        {
+          "name": "กระบี่ เขต 3",
+          "province": "กระบี่",
+          "voterCount": 119957,
+          "actualVoters": 99453,
+          "invalidVotes": 3542,
+          "noVotes": 1910
+        },
+        {
+          "name": "ชุมพร เขต 1",
+          "province": "ชุมพร",
+          "voterCount": 135731,
+          "actualVoters": 108261,
+          "invalidVotes": 2450,
+          "noVotes": 3301
+        },
+        {
+          "name": "ชุมพร เขต 2",
+          "province": "ชุมพร",
+          "voterCount": 134788,
+          "actualVoters": 108613,
+          "invalidVotes": 3464,
+          "noVotes": 3390
+        },
+        {
+          "name": "ชุมพร เขต 3",
+          "province": "ชุมพร",
+          "voterCount": 133675,
+          "actualVoters": 101559,
+          "invalidVotes": 3660,
+          "noVotes": 3221
+        },
+        {
+          "name": "ตรัง เขต 1",
+          "province": "ตรัง",
+          "voterCount": 121231,
+          "actualVoters": 102067,
+          "invalidVotes": 2135,
+          "noVotes": 3665
+        },
+        {
+          "name": "ตรัง เขต 2",
+          "province": "ตรัง",
+          "voterCount": 130596,
+          "actualVoters": 104797,
+          "invalidVotes": 3122,
+          "noVotes": 3009
+        },
+        {
+          "name": "ตรัง เขต 3",
+          "province": "ตรัง",
+          "voterCount": 123965,
+          "actualVoters": 95612,
+          "invalidVotes": 3223,
+          "noVotes": 6475
+        },
+        {
+          "name": "ตรัง เขต 4",
+          "province": "ตรัง",
+          "voterCount": 125499,
+          "actualVoters": 101994,
+          "invalidVotes": 2779,
+          "noVotes": 2555
+        },
+        {
+          "name": "นครศรีธรรมราช เขต 1",
+          "province": "นครศรีธรรมราช",
+          "voterCount": 121449,
+          "actualVoters": 91015,
+          "invalidVotes": 2328,
+          "noVotes": 2750
+        },
+        {
+          "name": "นครศรีธรรมราช เขต 2",
+          "province": "นครศรีธรรมราช",
+          "voterCount": 127264,
+          "actualVoters": 98651,
+          "invalidVotes": 3651,
+          "noVotes": 3733
+        },
+        {
+          "name": "นครศรีธรรมราช เขต 3",
+          "province": "นครศรีธรรมราช",
+          "voterCount": 135503,
+          "actualVoters": 94474,
+          "invalidVotes": 3039,
+          "noVotes": 1695
+        },
+        {
+          "name": "นครศรีธรรมราช เขต 4",
+          "province": "นครศรีธรรมราช",
+          "voterCount": 127614,
+          "actualVoters": 93949,
+          "invalidVotes": 4125,
+          "noVotes": 4284
+        },
+        {
+          "name": "นครศรีธรรมราช เขต 5",
+          "province": "นครศรีธรรมราช",
+          "voterCount": 122607,
+          "actualVoters": 94919,
+          "invalidVotes": 2797,
+          "noVotes": 2546
+        },
+        {
+          "name": "นครศรีธรรมราช เขต 6",
+          "province": "นครศรีธรรมราช",
+          "voterCount": 113429,
+          "actualVoters": 85160,
+          "invalidVotes": 2284,
+          "noVotes": 2468
+        },
+        {
+          "name": "นครศรีธรรมราช เขต 7",
+          "province": "นครศรีธรรมราช",
+          "voterCount": 118822,
+          "actualVoters": 90304,
+          "invalidVotes": 2656,
+          "noVotes": 2901
+        },
+        {
+          "name": "นครศรีธรรมราช เขต 8",
+          "province": "นครศรีธรรมราช",
+          "voterCount": 117640,
+          "actualVoters": 90014,
+          "invalidVotes": 3218,
+          "noVotes": 3938
+        },
+        {
+          "name": "นครศรีธรรมราช เขต 9",
+          "province": "นครศรีธรรมราช",
+          "voterCount": 114776,
+          "actualVoters": 90381,
+          "invalidVotes": 3074,
+          "noVotes": 2053
+        },
+        {
+          "name": "นครศรีธรรมราช เขต 10",
+          "province": "นครศรีธรรมราช",
+          "voterCount": 127071,
+          "actualVoters": 95962,
+          "invalidVotes": 2813,
+          "noVotes": 2377
+        },
+        {
+          "name": "นราธิวาส เขต 1",
+          "province": "นราธิวาส",
+          "voterCount": 124387,
+          "actualVoters": 98791,
+          "invalidVotes": 6320,
+          "noVotes": 2246
+        },
+        {
+          "name": "นราธิวาส เขต 2",
+          "province": "นราธิวาส",
+          "voterCount": 109614,
+          "actualVoters": 81596,
+          "invalidVotes": 5305,
+          "noVotes": 2103
+        },
+        {
+          "name": "นราธิวาส เขต 3",
+          "province": "นราธิวาส",
+          "voterCount": 108823,
+          "actualVoters": 80412,
+          "invalidVotes": 6778,
+          "noVotes": 1612
+        },
+        {
+          "name": "นราธิวาส เขต 4",
+          "province": "นราธิวาส",
+          "voterCount": 113598,
+          "actualVoters": 85575,
+          "invalidVotes": 6177,
+          "noVotes": 1141
+        },
+        {
+          "name": "นราธิวาส เขต 5",
+          "province": "นราธิวาส",
+          "voterCount": 119721,
+          "actualVoters": 95803,
+          "invalidVotes": 6518,
+          "noVotes": 799
+        },
+        {
+          "name": "ปัตตานี เขต 1",
+          "province": "ปัตตานี",
+          "voterCount": 95339,
+          "actualVoters": 75246,
+          "invalidVotes": 2317,
+          "noVotes": 2611
+        },
+        {
+          "name": "ปัตตานี เขต 2",
+          "province": "ปัตตานี",
+          "voterCount": 107853,
+          "actualVoters": 84368,
+          "invalidVotes": 2859,
+          "noVotes": 1573
+        },
+        {
+          "name": "ปัตตานี เขต 3",
+          "province": "ปัตตานี",
+          "voterCount": 94165,
+          "actualVoters": 71581,
+          "invalidVotes": 2708,
+          "noVotes": 1166
+        },
+        {
+          "name": "ปัตตานี เขต 4",
+          "province": "ปัตตานี",
+          "voterCount": 106339,
+          "actualVoters": 83889,
+          "invalidVotes": 2570,
+          "noVotes": 1138
+        },
+        {
+          "name": "ปัตตานี เขต 5",
+          "province": "ปัตตานี",
+          "voterCount": 104911,
+          "actualVoters": 78884,
+          "invalidVotes": 3263,
+          "noVotes": 1126
+        },
+        {
+          "name": "พังงา เขต 1",
+          "province": "พังงา",
+          "voterCount": 98336,
+          "actualVoters": 77532,
+          "invalidVotes": 2393,
+          "noVotes": 2522
+        },
+        {
+          "name": "พังงา เขต 2",
+          "province": "พังงา",
+          "voterCount": 108410,
+          "actualVoters": 84059,
+          "invalidVotes": 3485,
+          "noVotes": 5079
+        },
+        {
+          "name": "พัทลุง เขต 1",
+          "province": "พัทลุง",
+          "voterCount": 133145,
+          "actualVoters": 113907,
+          "invalidVotes": 3240,
+          "noVotes": 2094
+        },
+        {
+          "name": "พัทลุง เขต 2",
+          "province": "พัทลุง",
+          "voterCount": 143176,
+          "actualVoters": 122339,
+          "invalidVotes": 3603,
+          "noVotes": 2302
+        },
+        {
+          "name": "พัทลุง เขต 3",
+          "province": "พัทลุง",
+          "voterCount": 141139,
+          "actualVoters": 116331,
+          "invalidVotes": 5130,
+          "noVotes": 4502
+        },
+        {
+          "name": "ภูเก็ต เขต 1",
+          "province": "ภูเก็ต",
+          "voterCount": 100995,
+          "actualVoters": 76178,
+          "invalidVotes": 1996,
+          "noVotes": 3449
+        },
+        {
+          "name": "ภูเก็ต เขต 2",
+          "province": "ภูเก็ต",
+          "voterCount": 102388,
+          "actualVoters": 75072,
+          "invalidVotes": 2113,
+          "noVotes": 2783
+        },
+        {
+          "name": "ภูเก็ต เขต 3",
+          "province": "ภูเก็ต",
+          "voterCount": 109826,
+          "actualVoters": 83826,
+          "invalidVotes": 2423,
+          "noVotes": 3120
+        },
+        {
+          "name": "ยะลา เขต 1",
+          "province": "ยะลา",
+          "voterCount": 125093,
+          "actualVoters": 99228,
+          "invalidVotes": 3613,
+          "noVotes": 3943
+        },
+        {
+          "name": "ยะลา เขต 2",
+          "province": "ยะลา",
+          "voterCount": 129255,
+          "actualVoters": 100319,
+          "invalidVotes": 4274,
+          "noVotes": 2696
+        },
+        {
+          "name": "ยะลา เขต 3",
+          "province": "ยะลา",
+          "voterCount": 127445,
+          "actualVoters": 97956,
+          "invalidVotes": 4229,
+          "noVotes": 2814
+        },
+        {
+          "name": "ระนอง เขต 1",
+          "province": "ระนอง",
+          "voterCount": 140024,
+          "actualVoters": 105944,
+          "invalidVotes": 4019,
+          "noVotes": 2518
+        },
+        {
+          "name": "สงขลา เขต 1",
+          "province": "สงขลา",
+          "voterCount": 128356,
+          "actualVoters": 102285,
+          "invalidVotes": 2797,
+          "noVotes": 3495
+        },
+        {
+          "name": "สงขลา เขต 2",
+          "province": "สงขลา",
+          "voterCount": 109816,
+          "actualVoters": 86476,
+          "invalidVotes": 2047,
+          "noVotes": 2113
+        },
+        {
+          "name": "สงขลา เขต 3",
+          "province": "สงขลา",
+          "voterCount": 128660,
+          "actualVoters": 107756,
+          "invalidVotes": 3141,
+          "noVotes": 3523
+        },
+        {
+          "name": "สงขลา เขต 4",
+          "province": "สงขลา",
+          "voterCount": 126314,
+          "actualVoters": 102833,
+          "invalidVotes": 3991,
+          "noVotes": 2223
+        },
+        {
+          "name": "สงขลา เขต 5",
+          "province": "สงขลา",
+          "voterCount": 125902,
+          "actualVoters": 103190,
+          "invalidVotes": 5194,
+          "noVotes": 5800
+        },
+        {
+          "name": "สงขลา เขต 6",
+          "province": "สงขลา",
+          "voterCount": 113548,
+          "actualVoters": 92676,
+          "invalidVotes": 3003,
+          "noVotes": 1701
+        },
+        {
+          "name": "สงขลา เขต 7",
+          "province": "สงขลา",
+          "voterCount": 119873,
+          "actualVoters": 99374,
+          "invalidVotes": 5304,
+          "noVotes": 3744
+        },
+        {
+          "name": "สงขลา เขต 8",
+          "province": "สงขลา",
+          "voterCount": 116928,
+          "actualVoters": 97417,
+          "invalidVotes": 3942,
+          "noVotes": 3031
+        },
+        {
+          "name": "สงขลา เขต 9",
+          "province": "สงขลา",
+          "voterCount": 127045,
+          "actualVoters": 107213,
+          "invalidVotes": 2824,
+          "noVotes": 3959
+        },
+        {
+          "name": "สตูล เขต 1",
+          "province": "สตูล",
+          "voterCount": 114190,
+          "actualVoters": 88647,
+          "invalidVotes": 3515,
+          "noVotes": 3835
+        },
+        {
+          "name": "สตูล เขต 2",
+          "province": "สตูล",
+          "voterCount": 126303,
+          "actualVoters": 105508,
+          "invalidVotes": 3460,
+          "noVotes": 2287
+        },
+        {
+          "name": "สุราษฎร์ธานี เขต 1",
+          "province": "สุราษฎร์ธานี",
+          "voterCount": 115687,
+          "actualVoters": 88545,
+          "invalidVotes": 1894,
+          "noVotes": 3950
+        },
+        {
+          "name": "สุราษฎร์ธานี เขต 2",
+          "province": "สุราษฎร์ธานี",
+          "voterCount": 114455,
+          "actualVoters": 84772,
+          "invalidVotes": 2621,
+          "noVotes": 2142
+        },
+        {
+          "name": "สุราษฎร์ธานี เขต 3",
+          "province": "สุราษฎร์ธานี",
+          "voterCount": 117203,
+          "actualVoters": 92603,
+          "invalidVotes": 3095,
+          "noVotes": 3137
+        },
+        {
+          "name": "สุราษฎร์ธานี เขต 4",
+          "province": "สุราษฎร์ธานี",
+          "voterCount": 121218,
+          "actualVoters": 89546,
+          "invalidVotes": 2395,
+          "noVotes": 5337
+        },
+        {
+          "name": "สุราษฎร์ธานี เขต 5",
+          "province": "สุราษฎร์ธานี",
+          "voterCount": 118628,
+          "actualVoters": 86830,
+          "invalidVotes": 3245,
+          "noVotes": 4449
+        },
+        {
+          "name": "สุราษฎร์ธานี เขต 6",
+          "province": "สุราษฎร์ธานี",
+          "voterCount": 123057,
+          "actualVoters": 96741,
+          "invalidVotes": 3129,
+          "noVotes": 2621
+        },
+        {
+          "name": "สุราษฎร์ธานี เขต 7",
+          "province": "สุราษฎร์ธานี",
+          "voterCount": 119934,
+          "actualVoters": 90881,
+          "invalidVotes": 2388,
+          "noVotes": 4969
+        }
+      ]
+    }
+  ]
+}
